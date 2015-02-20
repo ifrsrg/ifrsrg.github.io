@@ -120,3 +120,7 @@ p.lead {
 p, .row li {
   font-size: 110%;
 }
+
+blockquote em {
+  font-family: georgia, times, serif;
+}
