@@ -8,7 +8,7 @@ body{
 	font-family: Arial, sans-serif;
 	background-color: #dddddd;
 	color: rgba(0,0,0,1);
-}	
+}
 div#interface{
 	width: 1100px;
 	background-color: #ffffff;
@@ -35,7 +35,7 @@ header#cabecalho img#icone {
 header#cabecalho{
 	border-bottom: 1px #606060 solid;
 	height: 200px;
-	background: url("../_imagens/tads.jpg") no-repeat 0px 80px;
+	background: url("../imagens/tads.jpg") no-repeat 0px 80px;
 }
 header#cabecalho h1{
 	font-family: 'FonteLogo', sans-serif;
@@ -116,7 +116,7 @@ section#corpo{
 	width: 600px;
 	float: left;
 	border-right: 1px solid #606060;
-	padding-right: 15px; 
+	padding-right: 15px;
 }
 article#noticia-principal h2{
 	font-size: 13pt;
@@ -154,7 +154,7 @@ table#tabelaspec td{
 	border: 1px solid #606060;
 	padding: 10px;
 	text-align: center;
-	vertical-align: middle;	
+	vertical-align: middle;
 }
 table#tabelaspec td.ce{
 	color: #ffffff;
