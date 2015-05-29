@@ -1,0 +1,16 @@
+{
+  "noticias": [
+    {
+      "titulo": "Um teste de noticia #1",
+      "texto": "texto da noticia #1 teste teste teste"
+    },
+    {
+      "titulo": "Um teste de noticia #2",
+      "texto": "texto da noticia #2 teste teste teste"
+    },
+    {
+      "titulo": "Um titulo extra",
+      "texto": "texto extra"
+    }
+  ]
+}

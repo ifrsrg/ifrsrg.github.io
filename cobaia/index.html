@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Teste</h1>
+
+    <div id="conteudo">
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    $.getJSON('noticias.json', function(data) {
+      $.each(data.noticias, function(index, noticia) {
+        var row = document.createElement('div');
+        $(row).addClass('row');
+        var h2 = document.createElement('h2');
+        $(h2).text(noticia.titulo);
+        var p = document.createElement('p');
+        $(p).text(noticia.texto);
+        $(row).append(h2).append(p);
+        $('div#conteudo').append(row);
+      });
+    });
+  });
+  </script>
+</body>
+</html>

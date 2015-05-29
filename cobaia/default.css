@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'montreal';
+    src: url('../fonts/montreal.ttf') format('truetype');
+    src: url('../fonts/montreal.woff') format('woff');
+}
+
+body {
+  /*min-height: 2000px;*/
+}
+
+/*.navbar-static-top {
+    margin-bottom: 15px;
+}
+*/
+
+div.jumbotron h1 {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+}
+
+div#conteudo h1, div#atividade-conteudo h1, div#nota-conteudo h1, div#container h1 {
+    color: #428bca;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Ubuntu;
+}
+
+blockquote, em {
+    font-family: bookman, "Bitstream Charter";
+}
