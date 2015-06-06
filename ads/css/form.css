@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 form{
-	width: 500px;
+	width: 800px;
 	margin: auto;
 }
 input, textarea{
@@ -26,13 +26,13 @@ fieldset{
 fieldset#sexo{
 	width: 150px;
 }
-fieldset#usuario{
+fieldset#Contato{
 	background: url("../imagens/icone-contato.png") no-repeat 95% 95%;
 }
 fieldset#endereco{
 	background: url("../imagens/icone-endereco.png") no-repeat 95% 95%;
 }
-fieldset#mensagem{
+fieldset#Coordenacao{
 	background: url("../imagens/icone-mensagem.png") no-repeat 95% 95%;
 }
 fieldset#pedido{

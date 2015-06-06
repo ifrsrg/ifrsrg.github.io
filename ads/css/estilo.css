@@ -119,6 +119,13 @@ section#corpo{
 	padding-left: 265px;
 	padding-right: 15px;
 }
+section#corpo-full{
+	display: block;
+	width: 1020px;
+	border-right: 1px solid #606060;
+	padding-left: 265px;
+	padding-right: 15px;	
+}
 article#noticia-principal h2{
 	font-size: 13pt;
 	color: #606060;
