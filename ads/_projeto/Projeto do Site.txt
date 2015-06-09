@@ -11,7 +11,11 @@ Projetos Politico Pedagogico - Texto
 							 - QSL
 							 - Outras Regulamentações
 
-Professor - Perfil
+Professor - Nome
+		  - Titulação
+		  - Currículo
+		  - Linkedin
+		  - E-mail
 
 Eventos - Semana Academica
 
