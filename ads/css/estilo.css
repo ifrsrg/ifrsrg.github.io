@@ -10,7 +10,7 @@ body{
 	color: rgba(0,0,0,1);
 }
 div#interface{
-	width: 1300px;
+	width: 99%;
 	background-color: #ffffff;
 	margin: -20px auto 0px auto;
 	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
@@ -113,7 +113,7 @@ nav#menu a:hover{
 }
 section#corpo{
 	display: block;
-	width: 580px;
+	width: 42%;
 	float: left;
 	border-right: 1px solid #606060;
 	padding-left: 265px;
@@ -121,10 +121,10 @@ section#corpo{
 }
 section#corpo-full{
 	display: block;
-	width: 1020px;
+	width: 78%;
 	border-right: 1px solid #606060;
 	padding-left: 265px;
-	padding-right: 15px;	
+	padding-right: 15px;
 }
 article#noticia-principal h2{
 	font-size: 13pt;
@@ -187,7 +187,7 @@ table#tabelaspec caption span{
 }
 aside#lateral{
 	display: block;
-	width: 415px;
+	width: 34%;
 	float: right;
 	background-color: #dddddd;
 	padding: 10px;
