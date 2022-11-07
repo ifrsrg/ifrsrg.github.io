@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Matriz Curricular - Tecnologia em Análise e Desenvolvimento de Sistemas</title>    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <style>
+        * {
+            cursor: pointer;
+            /*font-family: Arial, Helvetica, sans-serif;*/           
+            font-family: 'Open Sans';         
+        }
+        .semestre {
+           /* height: 50px;
+            width: 50px;
+            border-radius: 50%;*/
+            border-radius: 10px;
+            background-color: rgb(245,245,245);
+            border: 3px rgb(117,117,117) solid;
+            text-align: center;
+        }
+        .ciencia_computacao {
+            border-radius: 10px;
+            background-color: rgb(255,242,204);            
+            border: 3px rgb(235,220,175) solid;
+            text-align: center;
+        }
+        .desenvolvimento_de_sistemas {
+            border-radius: 10px;
+            background-color: rgb(218,232,252);
+            border: 3px rgb(116,135,182) solid;            
+            text-align: center;
+        }
+        .desenvolvimento_de_aplicativos {
+            border-radius: 10px;
+            background-color: rgb(230,208,222);
+            border: 3px rgb(178,132,161) solid;          
+            text-align: center;
+        }
+        .analise_de_sistemas {
+            border-radius: 10px;
+            background-color: rgb(213,232,212);
+            border: 3px rgb(130,179,102) solid;                      
+            text-align: center;
+        }
+        .area_geral {
+            border-radius: 10px;
+            background-color: rgb(229,204,255);
+            border: 3px rgb(181,109,255) solid;                                  
+            text-align: center;
+        }
+        .area_geral_optativa {
+            border-radius: 10px;
+            background-color: rgb(229,204,255);
+            border: 3px rgb(181,109,255) dashed;                                  
+            text-align: center;
+        }
+        .banco_de_dados {
+            border-radius: 10px;
+            background-color: rgb(248,206,204);
+            border: 3px rgb(206,126,123) solid;                                              
+            text-align: center;
+        }
+        .producao_cientifica {
+            border-radius: 10px;
+            background-color: rgb(205,235,139);
+            border: 3px rgb(107,119,88) solid;                                              
+            text-align: center;
+        }
+        .atividades_complementares {
+            border-radius: 10px;
+            background-color: white;
+            border: 3px black solid;                                              
+            text-align: center;
+        }
+        .area_formacao {
+            border-radius: 10px;
+            background-color: rgb(245,245,245);
+            border: 3px rgb(184,184,184) solid;     
+            width: min-content;            
+            float: left;
+        }
+    </style>
+    <script type="text/javascript">
+        var ocp = ["fcp"];
+        var pmd = ["lgp"];
+        var dif = ["ihc"];
+        var esf = ["sif"];
+        var pmb = ["sif"];
+        var fmd = ["mbs"];
+        var sop = ["ocp", "pmb"];
+        var poo = ["pmd"];
+        var dit = ["dif", "pmb"];
+        var aps = ["esf"];
+        var iob = ["fmd", "pmb"];
+        var fee = ["mbs"];
+        var ppp = ["poo", "aps"];
+        var wb1 = ["poo", "dit", "iob"];
+        var wb2 = ["wb1", "ppp"];
+        var edd = ["sop"];
+        var aps = ["esf"];
+        var iob = ["fmd", "pmb"];
+        var fie = ["fee"];
+        var pbd = ["iob"];
+        var gpj = ["esf"];
+        var ppa = ["ppp"];
+        var rcp = ["edd"];
+        var edd = ["sop"];
+        var qsf = ["gpj"];
+        var eep = ["gpj"];
+        var tci = ["rcp"];
+        var tds = ["ppa"];
+        var tda = ["wb2"];
+        var tbd = ["pbd"];
+        var tas = ["qsf"];
+        var sem = ["rcp", "ppa", "wb2", "qsf", "eep", "mct"];
+        var acc = ["poo", "dit", "sop", "aps", "iob", "fee"];
+        var tcc = ["sem"];
+
+        function limpar(){            
+            var array = document.querySelectorAll("td");
+            for (let index = 0; index < array.length; index++) {
+                array[index].style = "";                
+            }
+        }
+        function destacaRequisito(id){  
+            limpar();
+            var className = document.getElementById(id).className;            
+            document.getElementById(id).style = "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";                        
+            var vetRequisito = eval(id);
+            for (let index = 0; index < vetRequisito.length; index++) {
+                document.getElementById(vetRequisito[index]).style = "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";                
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Matriz Curricular - Tecnologia em Análise e Desenvolvimento de Sistemas</h2>
+    <!--<button onclick="limpar()">Limpar</button>-->
+    <table>
+        <tr>
+            <td class="semestre"><b>1º Sem.</b></td>
+            <td class="semestre"><b>2º Sem.</b></td>
+            <td class="semestre"><b>3º Sem.</b></td>
+            <td class="semestre"><b>4º Sem.</b></td>
+            <td class="semestre"><b>5º Sem.</b></td>
+            <td class="semestre"><b>6º Sem.</b></td>
+        </tr>
+        <tr>
+            <td id="fcp" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Fundamentos<br>da Computação</b><br>4 aulas semanais 66h</td>
+            <td id="ocp" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Organização<br>de Computadores</b><br>2 aulas semanais 33h</td>        
+            <td id="sop" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Sistemas<br>Operacionais</b><br>2 aulas semanais 33h</td>
+            <td id="edd" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Estrutura<br>de Dados</b><br>4 aulas semanais 66h</td>
+            <td id="rcp" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Redes<br>de Computadores</b><br>4 aulas semanais 66h</td>
+            <td id="tci" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos em Ciência<br>da Computação</b><br>2 aulas semanais 33h</td>
+        </tr>
+        <tr>
+            <td id="lgp" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Lógica<br>de Programação</b><br>6 aulas semanais 100h</td>
+            <td id="pmd" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Programação<br>Modular</b><br>4 aulas semanais 66h</td>        
+            <td id="poo" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Programação<br>Orientada a Objetos</b><br>4 aulas semanais 66h</td>
+            <td id="ppp" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Princípios e Padrões<br>de Projeto</b><br>4 aulas semanais 66h</td>
+            <td id="ppa" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Princípios e Padrões<br>de Arquitetura</b><br>4 aulas semanais 66h</td>
+            <td id="tds" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos em<br>Desenvolvimento<br>de Sistemas</b><br>2 aulas semanais 33h</td>
+        </tr>
+        <tr>
+            <td id="ihc" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Fundamentos de<br>Iteração Humano-<br>Computador</b><br>2 aulas semanais 33h</td>
+            <td id="dif" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Design<br>de Interface</b><br>4 aulas semanais 66h</td>
+            <td id="dit" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Design<br>de Interação</b><br>4 aulas semanais 66h</td>
+            <td id="wb1" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Desenvolvimento<br>de Aplicativos<br>WEBI</b><br>4 aulas semanais 66h</td>
+            <td id="wb2" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Desenvolvimento<br>de Aplicativos<br>WEBII</b><br>4 aulas semanais 66h</td>
+            <td id="tda" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos em<br>Desenvolvimento<br>de Aplicativos</b><br>2 aulas semanais 33h</td>
+        </tr>
+        <tr>
+            <td id="sif" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Sistemas<br>de Informação</b><br>4 aulas semanais 66h</td>
+            <td id="esf" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Engenharia<br>de Software</b><br>4 aulas semanais 66h </td>        
+            <td id="aps" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Análise e<br>Projeto de Software</b><br>4 aulas semanais 66h</td>
+            <td id="gpj" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Gerência<br>de Projeto</b><br>4 aulas semanais 66h</td>
+            <td id="qsf" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Qualidade<br>de Software</b><br>2 aulas semanais 33h  </td>
+            <td id="tas" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos em Análise<br>de Sistemas</b><br>2 aulas semanais 33h</td>            
+        </tr>
+        <tr>
+            <td id="tsc" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos em<br>Tecnologia e<br>Sociedade</b><br>2 aulas semanais 33h  </td>
+            <td id="pmb" class="banco_de_dados" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Projeto e<br>Modelagem de<br>Banco de Dados</b><br>2 aulas semanais 33h</td>
+            <td id="iob" class="banco_de_dados" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Implementação e<br>Operação de Banco de<br>Dados</b><br>4 aulas semanais 66h</td>
+            <td id="pbd" class="banco_de_dados" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Programação em<br>Banco De Dados</b><br>2 aulas semanais 33h</td>
+            <td id="eep" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Empreendimentos<br>Empresariais</b><br>4 aulas semanais 66h</td>
+            <td id="tbd" class="banco_de_dados" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos em<br>Banco De Dados</b><br>2 aulas semanais 33h</td>
+        </tr>
+        <tr>
+            <td id="mbs" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Matemática<br>Básica</b><br>2 aulas semanais 33h</td>
+            <td id="fmd" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Fundamentos<br>de Matemática<br>Discreta</b><br>4 aulas semanais 66h</td>
+            <td id="fee" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Fundamentos<br>de Estatística<br>Exploratória</b><br>2 aulas semanais 33h</td>
+            <td id="fie" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Fundamentos<br>de Inferência<br>Estatística</b><br>2 aulas semanais 33h</td>
+            <td id="mct" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Metodologia<br>Científica</b><br>2 aulas semanais 33h</td>
+            <td id="optativa" class="area_geral_optativa" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Libras/Inglês</b><br>(optativa)<br>2 aulas semanais 33h</td>
+        </tr>
+    </table>    
+    <br>
+    <table>
+        <tr>
+            <td id="acc" class="atividades_complementares" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Atividades<br>Complementares<br>Curriculares</b><br>66h</td>
+            <td id="sem" class="producao_cientifica" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Seminários</b><br>10 aulas semanais 166h</td>
+            <td id="tcc" class="producao_cientifica" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Trabalho de<br>Conclusão de Curso</b><br>66h</td>            
+            <td class="atividades_complementares" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>ENADE</b></td>
+        </tr>
+    </table>    
+    <br>
+    <div class="area_formacao">    
+    <h3 style="text-align: center;">ÁREAS DE FORMAÇÃO</h3>
+    <table>
+        <tr>
+            <td class="ciencia_computacao"><b>Ciência da<br>Computação</b><br> 297h <br> de sala de aula</td>
+            <td class="desenvolvimento_de_sistemas"><b>Desenvolvimento<br>de Sistemas</b> <br> 397h <br> de sala de aula</td>
+            <td class="desenvolvimento_de_aplicativos"><b>Desenvolvimento<br>de Aplicativos</b> <br> 330h <br> de sala de aula</td>
+            <td class="producao_cientifica"><b>Produção<br>Científica e<br>Tecnológica</b><br> 166h de sala de aula<br>+ 66h TCC <br> 232h total</td>
+        </tr>
+        <tr>
+            <td class="analise_de_sistemas"><b>Análise<br>de Sistemas</b> <br> 330h <br> de sala de aula </td>
+            <td class="banco_de_dados"><b>Banco de<br>Dados</b> <br> 165h <br> de sala de aula </td>
+            <td class="area_geral"><b>Área<br>Geral</b> <br> 330h <br> de sala de aula</td>
+            <td class="atividades_complementares"><b>Atividades<br>Complementares</b> <br> 66h  </td>
+        </tr>
+    </table>
+    <h4 style="text-align: center;">2.015 horas de sala de aula e 2.147 total</h4>
+    </div>
+    <!-- <div class="area_formacao">    
+        <h3 style="text-align: center; width: 150px;">LEGENDA</h3>
+        <table>
+        <tr>
+            <td><span style="width: 50px; background-color: blue"> &nbsp; &nbsp;</span></td>
+            <td>Disciplina</td>
+        </tr>
+        <tr>
+            <td><span style="width: 50px; background-color: green"> &nbsp; &nbsp;</span></td>
+            <td>Pré-Requisitos</td>
+        </tr>
+    </table>
+    </div> -->
+</body>
+</html>
