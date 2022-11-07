@@ -1,6 +1,4 @@
 # ifrsrg.github.io
-Site dos cursos ligados a Coordenação de Informática do IFRS Câmpus Rio Grande
-
 
 * **ads:** diretório de testes para o site do curso de tecnologia em análise e desenvolvimento de sistemas - sem estilo CSS (**_arquivado_**)
 
