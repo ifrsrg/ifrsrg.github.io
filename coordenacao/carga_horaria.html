@@ -74,34 +74,41 @@
             atualizarCargaPorProfessor();
         }
 
-        function adicionarNovaDisciplina(){
+        function adicionarNovaDisciplina(){  
+
             var novo_nome = document.getElementById('novo_nome').value;
             var creditos = parseInt(document.getElementById('novo_creditos').value);
             var duracao = parseInt(document.getElementById('novo_duracao').value);
-            let disciplina = {
-                    "nome": novo_nome,
-                    "creditos": creditos,
-                    "duracaoPorCredito": duracao
-            }
-            vetDisciplina.push(disciplina);
 
-            var table = document.getElementById('delegacao');
-            // var rowCount = table.rows.length;            
-            // var row = table.insertRow(rowCount);
-            var row = table.insertRow(0);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            
-            cell1.innerHTML = novo_nome;   
+            if (novo_nome != "" && creditos > 0 && duracao > 0) {               
+                
+                let disciplina = {
+                        "nome": novo_nome,
+                        "creditos": creditos,
+                        "duracaoPorCredito": duracao
+                }
+                vetDisciplina.push(disciplina);
 
-            var html_professor = "<select id='"+parseInt(vetDisciplina.length-1)+"' onchange='computa()'> ";
-            html_professor += "<option value=''> </option>";
-            for (var professor in cargaHorariaPorProfessor) {
-                html_professor += "<option value='" + professor + "'>" + professor + "</option>";
+                var table = document.getElementById('delegacao');
+                // var rowCount = table.rows.length;            
+                // var row = table.insertRow(rowCount);
+                var row = table.insertRow(0);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                
+                cell1.innerHTML = novo_nome;   
+
+                var html_professor = "<select id='"+parseInt(vetDisciplina.length-1)+"' onchange='computa()'> ";
+                html_professor += "<option value=''> </option>";
+                for (var professor in cargaHorariaPorProfessor) {
+                    html_professor += "<option value='" + professor + "'>" + professor + "</option>";
+                }
+                html_professor += "</select>";
+                
+                cell2.innerHTML = html_professor;
+            } else {
+                alert("Preenha todos os campos!!");
             }
-            html_professor += "</select>";
-            
-            cell2.innerHTML = html_professor;
         }
 
         function carregar() {
