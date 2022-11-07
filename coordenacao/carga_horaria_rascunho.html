@@ -16,12 +16,10 @@
     </style>
     <script type="text/javascript">
         const SEPARADOR = ",";        
-
         var cargaHorariaPorProfessor = [];
         var vetDisciplina = [];
 
         function converter(minutos) {
-            // const horas = Math.floor(minutos / 60);
             const horas = parseInt(minutos/60);
             const min = parseInt(minutos % 60);
             const textoHoras = (`00${horas}`).slice(-2);
@@ -43,7 +41,6 @@
 
         function atualizarCargaPorProfessor() {
             var html = "";
-            // var html = "<h1> extrato </h1>";
             html += "<table border='1'>";
             for (var professor in cargaHorariaPorProfessor) {
                 var total = cargaHorariaPorProfessor[professor];
