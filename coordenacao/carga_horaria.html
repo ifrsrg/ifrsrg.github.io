@@ -46,9 +46,35 @@
             wnd.document.write(csv);            
         }
 
+        function adicionarNovoProfessor(){
+            var novo_professor = ((document.getElementById('novo_professor').value != "") ? document.getElementById('novo_professor').value: alert('preencha'));
+            cargaHorariaPorProfessor[novo_professor] = 0;
+            var table = document.getElementById('tab_carga');
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = novo_professor;  
+            cell2.innerHTML = 0;   
+
+            var vetCombo = document.querySelectorAll("select");
+            // let elements = document.getElementsByName("fname");
+            // document.write(vetCombo[0].innerHTML);
+
+            for (let index = 0; index < vetCombo.length; index++) {                
+                var select = vetCombo[index];
+                // console.log(select);
+                // break;
+                var opt = document.createElement('option');
+                opt.value = novo_professor;
+                opt.innerHTML = novo_professor;
+                select.appendChild(opt);                
+            }            
+           
+        }
+
         function atualizarCargaPorProfessor() {
-            var html = "";
-            html += "<table border='1'>";
+            var html = "<input type='text' id='novo_professor'><button onclick='adicionarNovoProfessor()'>Adicionar</button><br><br>";
+            html += "<table id='tab_carga' border='1'>";
             for (var professor in cargaHorariaPorProfessor) {
                 var total = cargaHorariaPorProfessor[professor];
                 html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
