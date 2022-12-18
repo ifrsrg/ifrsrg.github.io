@@ -38,6 +38,27 @@
             localStorage.clear();
         }
 
+        //  pendente
+        // function restaurar(){
+        //     var cargaHorariaPorProfessorAux = JSON.parse(localStorage.getItem("cargaHorariaPorProfessor"));
+        //     for (let index = 0; index < cargaHorariaPorProfessorAux.length; index++) {
+        //         cargaHorariaPorProfessor[cargaHorariaPorProfessorAux[index].nome] = cargaHorariaPorProfessorAux[index].carga;                
+        //     }                         
+            // var html = "<input type='text' id='novo_professor'><button onclick='adicionarNovoProfessor()'>Adicionar</button><br><br>";
+            // html += "<table id='tab_carga' border='1'>";
+            // for (var professor in cargaHorariaPorProfessor) {
+            //     alert("oi");
+            //     var total = cargaHorariaPorProfessor[professor];
+            //     html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
+            // }
+            // html += "</table><button onclick='exportar()'> Exportar CSV </button>";
+            // html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
+            // html += "</table><button onclick='restaurar()'> Restaurar (localStorage) </button>";
+            // html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
+            // document.getElementById("tabela").innerHTML = "";
+            // document.getElementById("tabela").innerHTML = html;
+        // }
+
         function salvar(){
             var vetDisciplinaAux = [];
             for (let index = 0; index < vetDisciplina.length; index++) {    
@@ -50,6 +71,16 @@
                 vetDisciplinaAux.push(disciplina);
             }  
             localStorage.setItem("vetDisciplina", JSON.stringify(vetDisciplinaAux));             
+
+            var cargaHorariaPorProfessorAux = [];
+            for (var professor_nome in cargaHorariaPorProfessor) {
+                let professor = {
+                    "nome": professor_nome,
+                    "carga": cargaHorariaPorProfessor[professor_nome]                    
+                }
+                cargaHorariaPorProfessorAux.push(professor);
+            }  
+            localStorage.setItem("cargaHorariaPorProfessor", JSON.stringify(cargaHorariaPorProfessorAux));             
         }
 
         function exportar(){
@@ -97,9 +128,11 @@
                 html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
             }
             html += "</table><button onclick='exportar()'> Exportar CSV </button>";
-            html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
-            html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
+            // html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
+            // html += "</table><button onclick='restaurar()'> Restaurar (localStorage) </button>";
+            // html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
             document.getElementById("tabela").innerHTML = html;
+            salvar();
         }
 
         function computa() {   
