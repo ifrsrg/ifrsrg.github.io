@@ -34,11 +34,30 @@
             return `${textoHoras}:${textoMinutos}`;
         }
 
+        function apagar(){
+            localStorage.clear();
+        }
+
+        function salvar(){
+            var vetDisciplinaAux = [];
+            for (let index = 0; index < vetDisciplina.length; index++) {    
+                let disciplina = {
+                    "nome": vetDisciplina[index].nome,
+                    "creditos": vetDisciplina[index].creditos,
+                    "duracaoPorCredito": vetDisciplina[index].duracao,
+                    "professor": ((document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() != '') ? document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() : "PENDENTE")
+                }
+                vetDisciplinaAux.push(disciplina);
+            }  
+            localStorage.setItem("vetDisciplina", JSON.stringify(vetDisciplinaAux));             
+        }
+
         function exportar(){
             var wnd = window.open("about:blank", "", "_blank");
             var csv = "";
             for (let index = 0; index < vetDisciplina.length; index++) {    
                 csv += vetDisciplina[index].nome+";"+((document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() != '') ? document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() : "PENDENTE")+";<br>";
+              
             }            
             for (var professor in cargaHorariaPorProfessor) {
                 csv += professor+";"+converter(cargaHorariaPorProfessor[professor])+";<br>";
@@ -78,6 +97,8 @@
                 html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
             }
             html += "</table><button onclick='exportar()'> Exportar CSV </button>";
+            html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
+            html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
             document.getElementById("tabela").innerHTML = html;
         }
 
