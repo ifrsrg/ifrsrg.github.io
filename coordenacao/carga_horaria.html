@@ -57,9 +57,9 @@
                     html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
                 }
                 html += "</table><button onclick='exportar()'> Exportar CSV </button>";
-                html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
+                // html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
                 // html += "</table><button onclick='restaurar()'> Restaurar (localStorage) </button>";
-                html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
+                // html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
                 document.getElementById("tabela").innerHTML = "";
                 document.getElementById("tabela").innerHTML = html;
 
@@ -169,9 +169,9 @@
                 html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
             }
             html += "</table><button onclick='exportar()'> Exportar CSV </button>";
-            html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
+            // html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
             // html += "</table><button onclick='restaurar()'> Restaurar (localStorage) </button>";
-            html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
+            // html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
             document.getElementById("tabela").innerHTML = html;
             salvar();
         }
