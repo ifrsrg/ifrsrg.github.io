@@ -97,6 +97,8 @@
                 document.getElementById("vetDisciplina").style = "display: none;";
                 document.getElementById("btn_carregar").style = "display: none;";
                 document.getElementById("btn_restaurar").style = "display: none;";
+            } else {
+                alert("Não há histórico salvo");
             }
         }
 
@@ -352,7 +354,8 @@ Desenvolvimento de Sistemas II,4,60
         </tr> -->
     </table>
     <button id="btn_carregar" onclick="carregar()">Carregar (Professores e Disciplinas)</button>
-    <button id="btn_restaurar" onclick="restaurar()">Restaurar (Professores e Disciplinas)</button>
+    <button id="btn_restaurar" onclick="restaurar()">Restaurar Histórico</button>
+    <button id="btn_restaurar" onclick="apagar()">Apagar Histório</button>
 
 </body>
 
