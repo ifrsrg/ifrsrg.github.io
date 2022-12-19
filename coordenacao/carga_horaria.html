@@ -9,10 +9,12 @@
     <style>
         * {
             cursor: pointer;
-            font-family: Arial, Helvetica, sans-serif;           
-            /*font-family: 'Open Sans';*/         
-        }       
-        table td, table td * {
+            font-family: Arial, Helvetica, sans-serif;
+            /*font-family: 'Open Sans';*/
+        }
+
+        table td,
+        table td * {
             vertical-align: top;
             /*border-radius: 10px;
             background-color: rgb(245,245,245);
@@ -22,102 +24,137 @@
         }
     </style>
     <script type="text/javascript">
-        const SEPARADOR = ",";        
+        const SEPARADOR = ",";
         var cargaHorariaPorProfessor = [];
         var vetDisciplina = [];
 
         function converter(minutos) {
-            const horas = parseInt(minutos/60);
+            const horas = parseInt(minutos / 60);
             const min = parseInt(minutos % 60);
             const textoHoras = (`00${horas}`).slice(-2);
             const textoMinutos = (`00${min}`).slice(-2);
             return `${textoHoras}:${textoMinutos}`;
         }
 
-        function apagar(){
+        function apagar() {
             localStorage.clear();
         }
 
         //  pendente
-        // function restaurar(){
-        //     var cargaHorariaPorProfessorAux = JSON.parse(localStorage.getItem("cargaHorariaPorProfessor"));
-        //     for (let index = 0; index < cargaHorariaPorProfessorAux.length; index++) {
-        //         cargaHorariaPorProfessor[cargaHorariaPorProfessorAux[index].nome] = cargaHorariaPorProfessorAux[index].carga;                
-        //     }                         
-            // var html = "<input type='text' id='novo_professor'><button onclick='adicionarNovoProfessor()'>Adicionar</button><br><br>";
-            // html += "<table id='tab_carga' border='1'>";
-            // for (var professor in cargaHorariaPorProfessor) {
-            //     alert("oi");
-            //     var total = cargaHorariaPorProfessor[professor];
-            //     html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
-            // }
-            // html += "</table><button onclick='exportar()'> Exportar CSV </button>";
-            // html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
-            // html += "</table><button onclick='restaurar()'> Restaurar (localStorage) </button>";
-            // html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
-            // document.getElementById("tabela").innerHTML = "";
-            // document.getElementById("tabela").innerHTML = html;
-        // }
+        function restaurar() {
+            if (localStorage.getItem("cargaHorariaPorProfessor") != undefined && localStorage.getItem("vetDisciplina") != undefined) {
+                var cargaHorariaPorProfessorAux = JSON.parse(localStorage.getItem("cargaHorariaPorProfessor"));
+                cargaHorariaPorProfessor = [];
+                for (let index = 0; index < cargaHorariaPorProfessorAux.length; index++) {
+                    cargaHorariaPorProfessor[cargaHorariaPorProfessorAux[index].nome] = parseInt(cargaHorariaPorProfessorAux[index].carga);
+                }
+                var html = "<input type='text' id='novo_professor'><button onclick='adicionarNovoProfessor()'>Adicionar</button><br><br>";
+                html += "<table id='tab_carga' border='1'>";
+                for (var professor in cargaHorariaPorProfessor) {
+                    var total = cargaHorariaPorProfessor[professor];
+                    html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
+                }
+                html += "</table><button onclick='exportar()'> Exportar CSV </button>";
+                html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
+                // html += "</table><button onclick='restaurar()'> Restaurar (localStorage) </button>";
+                // html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
+                document.getElementById("tabela").innerHTML = "";
+                document.getElementById("tabela").innerHTML = html;
 
-        function salvar(){
+                vetDisciplina = [];
+                var html_professor1 = "<option value=''> </option>";
+                for (var professor in cargaHorariaPorProfessor) {
+                    html_professor1 += "<option value='" + professor + "'>" + professor + "</option>";
+                }
+                for (let index = 0; index < JSON.parse(localStorage.getItem("vetDisciplina")).length; index++) {                    
+                    let disciplina = {
+                        "nome": JSON.parse(localStorage.getItem("vetDisciplina"))[index].nome,
+                        "creditos": parseInt(JSON.parse(localStorage.getItem("vetDisciplina"))[index].creditos),
+                        "duracaoPorCredito": parseInt(JSON.parse(localStorage.getItem("vetDisciplina"))[index].duracaoPorCredito)
+                    }
+                    vetDisciplina.push(disciplina);
+                }
+                var html = "<input type='text' id='novo_nome'><input type='number' id='novo_creditos'><input type='number' id='novo_duracao'><button onclick='adicionarNovaDisciplina()'>Adicionar</button><br><br>";
+                html += "<table id='delegacao' border='1'>";
+                var html_professor2 = "";
+                for (let index = 0; index < vetDisciplina.length; index++) {
+                    html_professor2 = "<select id='" + index + "' onchange='computa()'>" + html_professor1 + "</select>";
+                    html += "<tr> <td>" + vetDisciplina[index].nome + "</td><td>" + html_professor2 + "</td></tr>";
+                    html_professor2 = "";
+                }
+                html += "</table>";
+                document.getElementById("sistema").innerHTML = "";
+                document.getElementById("sistema").innerHTML = html;
+
+
+                document.getElementById("formato_professor").style = "display: none;";
+                document.getElementById("formato_disciplina").style = "display: none;";
+                document.getElementById("vetProfessor").style = "display: none;";
+                document.getElementById("vetDisciplina").style = "display: none;";
+                document.getElementById("btn_carregar").style = "display: none;";
+                document.getElementById("btn_restaurar").style = "display: none;";
+            }
+        }
+
+        function salvar() {
             var vetDisciplinaAux = [];
-            for (let index = 0; index < vetDisciplina.length; index++) {    
+            for (let index = 0; index < vetDisciplina.length; index++) {
                 let disciplina = {
                     "nome": vetDisciplina[index].nome,
                     "creditos": vetDisciplina[index].creditos,
-                    "duracaoPorCredito": vetDisciplina[index].duracao,
+                    "duracaoPorCredito": vetDisciplina[index].duracaoPorCredito,
                     "professor": ((document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() != '') ? document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() : "PENDENTE")
                 }
                 vetDisciplinaAux.push(disciplina);
-            }  
-            localStorage.setItem("vetDisciplina", JSON.stringify(vetDisciplinaAux));             
+            }
+            localStorage.setItem("vetDisciplina", JSON.stringify(vetDisciplinaAux));
 
             var cargaHorariaPorProfessorAux = [];
             for (var professor_nome in cargaHorariaPorProfessor) {
                 let professor = {
                     "nome": professor_nome,
-                    "carga": cargaHorariaPorProfessor[professor_nome]                    
+                    "carga": cargaHorariaPorProfessor[professor_nome]
                 }
                 cargaHorariaPorProfessorAux.push(professor);
-            }  
-            localStorage.setItem("cargaHorariaPorProfessor", JSON.stringify(cargaHorariaPorProfessorAux));             
+            }
+            localStorage.setItem("cargaHorariaPorProfessor", JSON.stringify(cargaHorariaPorProfessorAux));
         }
 
-        function exportar(){
+        function exportar() {
             var wnd = window.open("about:blank", "", "_blank");
             var csv = "";
-            for (let index = 0; index < vetDisciplina.length; index++) {    
-                csv += vetDisciplina[index].nome+";"+((document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() != '') ? document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() : "PENDENTE")+";<br>";
-              
-            }            
+            for (let index = 0; index < vetDisciplina.length; index++) {
+                csv += vetDisciplina[index].nome + ";" + ((document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() != '') ? document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() : "PENDENTE") + ";<br>";
+
+            }
             for (var professor in cargaHorariaPorProfessor) {
-                csv += professor+";"+converter(cargaHorariaPorProfessor[professor])+";<br>";
-            }               
-            wnd.document.write(csv);            
+                csv += professor + ";" + converter(cargaHorariaPorProfessor[professor]) + ";<br>";
+            }
+            wnd.document.write(csv);
         }
 
-        function adicionarNovoProfessor(){
-            if (document.getElementById('novo_professor').value != ""){
+        function adicionarNovoProfessor() {
+            if (document.getElementById('novo_professor').value != "") {
                 var novo_professor = document.getElementById('novo_professor').value;
                 cargaHorariaPorProfessor[novo_professor] = 0;
                 var table = document.getElementById('tab_carga');
                 var row = table.insertRow(0);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
-                cell1.innerHTML = novo_professor;  
-                cell2.innerHTML = 0;   
+                cell1.innerHTML = novo_professor;
+                cell2.innerHTML = 0;
                 var vetCombo = document.querySelectorAll("select");
-                for (let index = 0; index < vetCombo.length; index++) {                
+                for (let index = 0; index < vetCombo.length; index++) {
                     var select = vetCombo[index];
                     var opt = document.createElement('option');
                     opt.value = novo_professor;
                     opt.innerHTML = novo_professor;
-                    select.appendChild(opt);                
-                }   
+                    select.appendChild(opt);
+                }
             } else {
                 alert('preencha com um nome valido (unico)');
-            }                 
-           
+            }
+
         }
 
         function atualizarCargaPorProfessor() {
@@ -128,41 +165,41 @@
                 html += "<tr> <td>" + professor + "</td><td>" + converter(total) + "</td> </tr>";
             }
             html += "</table><button onclick='exportar()'> Exportar CSV </button>";
-            // html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
+            html += "</table><button onclick='salvar()'> Salvar (localStorage) </button>";
             // html += "</table><button onclick='restaurar()'> Restaurar (localStorage) </button>";
-            // html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
+            html += "</table><button onclick='apagar()'> Apagar (localStorage) </button>";
             document.getElementById("tabela").innerHTML = html;
             salvar();
         }
 
-        function computa() {   
-            cargaHorariaPorProfessorAux = [];            
+        function computa() {
+            cargaHorariaPorProfessorAux = [];
             for (var professor in cargaHorariaPorProfessor) {
                 cargaHorariaPorProfessorAux[professor] = 0;
             }
             cargaHorariaPorProfessor = [];
             cargaHorariaPorProfessor = cargaHorariaPorProfessorAux;
 
-            for (let index = 0; index < vetDisciplina.length; index++) {    
-                if (document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() != ""){
-                    cargaHorariaPorProfessor[document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim()] += 
-                    vetDisciplina[index].creditos * vetDisciplina[index].duracaoPorCredito;                
+            for (let index = 0; index < vetDisciplina.length; index++) {
+                if (document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim() != "") {
+                    cargaHorariaPorProfessor[document.getElementById(index).options[document.getElementById(index).selectedIndex].value.trim()] +=
+                        vetDisciplina[index].creditos * vetDisciplina[index].duracaoPorCredito;
                 }
             }
             atualizarCargaPorProfessor();
         }
 
-        function adicionarNovaDisciplina(){  
+        function adicionarNovaDisciplina() {
             var novo_nome = document.getElementById('novo_nome').value;
             var creditos = parseInt(document.getElementById('novo_creditos').value);
             var duracao = parseInt(document.getElementById('novo_duracao').value);
 
-            if (novo_nome != "" && creditos > 0 && duracao > 0) {               
-                
+            if (novo_nome != "" && creditos > 0 && duracao > 0) {
+
                 let disciplina = {
-                        "nome": novo_nome,
-                        "creditos": creditos,
-                        "duracaoPorCredito": duracao
+                    "nome": novo_nome,
+                    "creditos": creditos,
+                    "duracaoPorCredito": duracao
                 }
                 vetDisciplina.push(disciplina);
 
@@ -172,16 +209,16 @@
                 var row = table.insertRow(0);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
-                
-                cell1.innerHTML = novo_nome;   
 
-                var html_professor = "<select id='"+parseInt(vetDisciplina.length-1)+"' onchange='computa()'> ";
+                cell1.innerHTML = novo_nome;
+
+                var html_professor = "<select id='" + parseInt(vetDisciplina.length - 1) + "' onchange='computa()'> ";
                 html_professor += "<option value=''> </option>";
                 for (var professor in cargaHorariaPorProfessor) {
                     html_professor += "<option value='" + professor + "'>" + professor + "</option>";
                 }
                 html_professor += "</select>";
-                
+
                 cell2.innerHTML = html_professor;
             } else {
                 alert("Preenha todos os campos!! Creditos e duração devem ser > 0");
@@ -205,13 +242,13 @@
                 }
                 vetDisciplina.push(disciplina);
             }
-            
+
             var html = "<input type='text' id='novo_nome'><input type='number' id='novo_creditos'><input type='number' id='novo_duracao'><button onclick='adicionarNovaDisciplina()'>Adicionar</button><br><br>";
-            
-            html += "<table id='delegacao' border='1'>";            
+
+            html += "<table id='delegacao' border='1'>";
             var html_professor2 = "";
             for (let index = 0; index < vetDisciplina.length; index++) {
-                html_professor2 = "<select id='"+index+"' onchange='computa()'>" + html_professor1 + "</select>";
+                html_professor2 = "<select id='" + index + "' onchange='computa()'>" + html_professor1 + "</select>";
                 html += "<tr> <td>" + vetDisciplina[index].nome + "</td><td>" + html_professor2 + "</td></tr>";
                 html_professor2 = "";
             }
@@ -226,6 +263,7 @@
         }
     </script>
 </head>
+
 <body>
     <h1>Disciplinas do Semestre</h1>
     <h2 id="formato_disciplina">Formato Disciplina: nome,créditos,duração por crédito (em minutos)<br></h2>
@@ -305,11 +343,13 @@ Desenvolvimento de Sistemas II,4,60
         </tr>
         <!-- <tr>
             <td> -->
-                <!-- <button id="btn_carregar" onclick="carregar()">Carregar (Professores e Disciplinas)</button> -->
-            <!-- </td>
+        <!-- <button id="btn_carregar" onclick="carregar()">Carregar (Professores e Disciplinas)</button> -->
+        <!-- </td>
         </tr> -->
     </table>
     <button id="btn_carregar" onclick="carregar()">Carregar (Professores e Disciplinas)</button>
+    <button id="btn_restaurar" onclick="restaurar()">Restaurar (Professores e Disciplinas)</button>
 
 </body>
+
 </html>
