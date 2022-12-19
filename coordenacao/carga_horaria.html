@@ -205,10 +205,12 @@
                 let disciplina = {
                     "nome": novo_nome,
                     "creditos": creditos,
-                    "duracaoPorCredito": duracao
+                    "duracaoPorCredito": duracao,
+                    "professor":"PENDENTE"
                 }
                 vetDisciplina.push(disciplina);
-                salvar();
+                localStorage.setItem("vetDisciplina",JSON.stringify(vetDisciplina));
+
 
                 var table = document.getElementById('delegacao');
                 // var rowCount = table.rows.length;            
