@@ -96,6 +96,7 @@
                 document.getElementById("vetProfessor").style = "display: none;";
                 document.getElementById("vetDisciplina").style = "display: none;";
                 document.getElementById("btn_carregar").style = "display: none;";
+                document.getElementById("btn_apagar").style = "display: none;";
                 document.getElementById("btn_restaurar").style = "display: none;";
             } else {
                 alert("Não há histórico salvo");
@@ -266,6 +267,9 @@
             document.getElementById("vetProfessor").style = "display: none;";
             document.getElementById("vetDisciplina").style = "display: none;";
             document.getElementById("btn_carregar").style = "display: none;";
+            document.getElementById("btn_apagar").style = "display: none;";
+            document.getElementById("btn_restaurar").style = "display: none;";
+
         }
     </script>
 </head>
@@ -355,7 +359,7 @@ Desenvolvimento de Sistemas II,4,60
     </table>
     <button id="btn_carregar" onclick="carregar()">Carregar (Professores e Disciplinas)</button>
     <button id="btn_restaurar" onclick="restaurar()">Restaurar Histórico</button>
-    <button id="btn_restaurar" onclick="apagar()">Apagar Histório</button>
+    <button id="btn_apagar" onclick="apagar()">Apagar Histório</button>
 
 </body>
 
