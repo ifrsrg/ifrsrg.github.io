@@ -85,6 +85,12 @@
             width: min-content;            
             float: left;
         }
+        .em_branco {
+            border-radius: 10px;
+            background-color: white;
+            border: 3px white solid;                                              
+            text-align: center;
+        }
     </style>
     <script type="text/javascript">
         var ocp = ["fcp"];
@@ -117,9 +123,9 @@
         var tda = ["wb2"];
         var tbd = ["pbd"];
         var tas = ["qsf"];
-        var sem = ["rcp", "ppa", "wb2", "qsf", "eep", "mct"];
+        var sem = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "tcc"];
         var acc = ["poo", "dit", "sop", "aps", "iob", "fee"];
-        var tcc = ["sem"];
+        var tcc = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "sem"];
 
         function limpar(){            
             var array = document.querySelectorAll("td");
@@ -198,17 +204,41 @@
             <td id="mct" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Metodologia<br>Científica</b><br>2 aulas semanais 33h</td>
             <td id="optativa" class="area_geral_optativa" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Libras/Inglês</b><br>(optativa)<br>2 aulas semanais 33h</td>
         </tr>
+        <tr>
+            <td class="em_branco"></td>
+            <td class="em_branco"></td>
+            <td class="em_branco"></td>            
+            <td id="acc" class="atividades_complementares" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Atividades<br>Complementares<br>Curriculares</b><br>66h</td>
+            <td class="em_branco"></td>            
+            <td id="sem" class="producao_cientifica" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Seminários</b><br>10 aulas semanais 166h</td>
+        </tr>
+        <tr>
+            <td class="em_branco"></td>
+            <td class="em_branco"></td>
+            <td class="em_branco"></td>            
+            <td class="em_branco"></td>
+            <td class="em_branco"></td>
+            <td id="tcc" class="producao_cientifica" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Trabalho de<br>Conclusão de Curso</b><br>66h</td>                        
+        </tr>
+        <tr>
+            <td class="em_branco"></td>
+            <td class="em_branco"></td>
+            <td class="em_branco"></td>            
+            <td class="em_branco"></td>
+            <td class="em_branco"></td>
+            <td class="atividades_complementares" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>ENADE</b></td>
+        </tr>
     </table>    
     <br>
-    <table>
+    <!-- <table>
         <tr>
             <td id="acc" class="atividades_complementares" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Atividades<br>Complementares<br>Curriculares</b><br>66h</td>
             <td id="sem" class="producao_cientifica" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Seminários</b><br>10 aulas semanais 166h</td>
             <td id="tcc" class="producao_cientifica" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Trabalho de<br>Conclusão de Curso</b><br>66h</td>            
             <td class="atividades_complementares" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>ENADE</b></td>
         </tr>
-    </table>    
-    <br>
+    </table>
+    <br>     -->
     <div class="area_formacao">    
     <h3 style="text-align: center;">ÁREAS DE FORMAÇÃO</h3>
     <table>
