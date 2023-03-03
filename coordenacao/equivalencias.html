@@ -115,7 +115,7 @@
         }
     </style>
     <script type="text/javascript">
-        // disciplinas ppc 2013 => o que aproveita
+        // disciplinas ppc 2013 => o que aproveita do ppc2022
         var fc2013 = ["fcp"];
         var lgp2013 = ["lgp", "pmd"];
         var fmd2013 = ["mbs", "fmd"];
@@ -141,12 +141,11 @@
         var fds1_fds2_2013 = ["tda"];
         var reconhecimento_padroes2013 = ["tci"]
         var desenvolvimento_de_aplicativos2013_desenvolvimento_de_aplicativos_embarcados2013 = ["tda"];
-        var topicos_avancados2013 = ["tci"];        
-        var libras2013 = ["optativa"];        
+        var topicos_avancados2013 = ["tci"];
+        var libras2013 = ["optativa"];
         var tecn_sist_geograficos2013 = ["tci"];
         var tcc2013 = ["tcc"]
         var horas_complementares2013 = ["acc"];
-        
         // disciplinas ppc 2022
         var ocp = ["fcp"];
         var pmd = ["lgp"];
@@ -184,8 +183,8 @@
         var mct = ["fie"];
 
         function destacaEquivalencia(id, foi_marcado) {
-            if (foi_marcado == true){
-                var equivalencia = document.getElementById(id);            
+            if (foi_marcado == true) {
+                var equivalencia = document.getElementById(id);
                 var vetEquivalencia = eval(id);
                 for (let index = 0; index < vetEquivalencia.length; index++) {
                     document.getElementById(vetEquivalencia[index]).style =
@@ -221,44 +220,71 @@
         }*/
     </script>
 </head>
+
 <body>
-    <h1 style="text-align:center">Equivalências - Tecnologia em Análise e Desenvolvimento de Sistemas (PPC 2013 / PPC 2022)</h1>
+    <h1 style="text-align:center">Equivalências - Tecnologia em Análise e Desenvolvimento de Sistemas (PPC 2013 / PPC
+        2022)</h1>
     <div style="align-content: start; width: max-content;">
         <h2>2013</h2>
-        <input type="checkbox" id="fc2013"  onclick="destacaEquivalencia(this.id, this.checked)"> Fundamentos da Computação <br>
-        <input type="checkbox" id="lgp2013" onclick="destacaEquivalencia(this.id, this.checked)"> Lógica de Programação <br>
-        <input type="checkbox" id="fmd2013" onclick="destacaEquivalencia(this.id, this.checked)"> Fund. Matemática Discreta <br>
-        <input type="checkbox" id="fe2013"  onclick="destacaEquivalencia(this.id, this.checked)"> Fund. Estatística <br>
-        <input type="checkbox" id="lei2013" onclick="destacaEquivalencia(this.id, this.checked)"> Língua Estrangeira (Inglês) <br>
-        <input type="checkbox" id="ocp2013" onclick="destacaEquivalencia(this.id, this.checked)"> Organização de Computadores <br>
-        <input type="checkbox" id="poo2013" onclick="destacaEquivalencia(this.id, this.checked)"> Programação Orientada a Objetos <br>
+        <input type="checkbox" id="fc2013" onclick="destacaEquivalencia(this.id, this.checked)"> Fundamentos da
+        Computação <br>
+        <input type="checkbox" id="lgp2013" onclick="destacaEquivalencia(this.id, this.checked)"> Lógica de Programação
+        <br>
+        <input type="checkbox" id="fmd2013" onclick="destacaEquivalencia(this.id, this.checked)"> Fund. Matemática
+        Discreta <br>
+        <input type="checkbox" id="fe2013" onclick="destacaEquivalencia(this.id, this.checked)"> Fund. Estatística <br>
+        <input type="checkbox" id="lei2013" onclick="destacaEquivalencia(this.id, this.checked)"> Língua Estrangeira
+        (Inglês) <br>
+        <input type="checkbox" id="ocp2013" onclick="destacaEquivalencia(this.id, this.checked)"> Organização de
+        Computadores <br>
+        <input type="checkbox" id="poo2013" onclick="destacaEquivalencia(this.id, this.checked)"> Programação Orientada
+        a Objetos <br>
         <input type="checkbox" id="iweb2013" onclick="destacaEquivalencia(this.id, this.checked)"> Interface Web <br>
         <input type="checkbox" id="bd2013" onclick="destacaEquivalencia(this.id, this.checked)"> Banco de Dados <br>
-        <input type="checkbox" id="so2013" onclick="destacaEquivalencia(this.id, this.checked)"> Sistema Operacionais <br>
-        <input type="checkbox" id="aps2013" onclick="destacaEquivalencia(this.id, this.checked)"> Arquitetura e Projeto de Sistemas <br>
-        <input type="checkbox" id="esf2013" onclick="destacaEquivalencia(this.id, this.checked)"> Engenharia de Software <br>
-        <input type="checkbox" id="wb1_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desenvolvimento para Web I <br>
-        <input type="checkbox" id="mct2013" onclick="destacaEquivalencia(this.id, this.checked)"> Metodologia Científica <br>
-        <input type="checkbox" id="edd2013" onclick="destacaEquivalencia(this.id, this.checked)"> Estruturas de Dados I <br>
-        <input type="checkbox" id="gpj2013" onclick="destacaEquivalencia(this.id, this.checked)"> Gerenciamento de Projetos <br>
-        <input type="checkbox" id="wb2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desenvolvimento para Web II <br>
+        <input type="checkbox" id="so2013" onclick="destacaEquivalencia(this.id, this.checked)"> Sistema Operacionais
+        <br>
+        <input type="checkbox" id="aps2013" onclick="destacaEquivalencia(this.id, this.checked)"> Arquitetura e Projeto
+        de Sistemas <br>
+        <input type="checkbox" id="esf2013" onclick="destacaEquivalencia(this.id, this.checked)"> Engenharia de Software
+        <br>
+        <input type="checkbox" id="wb1_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desenvolvimento para
+        Web I <br>
+        <input type="checkbox" id="mct2013" onclick="destacaEquivalencia(this.id, this.checked)"> Metodologia Científica
+        <br>
+        <input type="checkbox" id="edd2013" onclick="destacaEquivalencia(this.id, this.checked)"> Estruturas de Dados I
+        <br>
+        <input type="checkbox" id="gpj2013" onclick="destacaEquivalencia(this.id, this.checked)"> Gerenciamento de
+        Projetos <br>
+        <input type="checkbox" id="wb2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desenvolvimento para
+        Web II <br>
         <input type="checkbox" id="rcp2013" onclick="destacaEquivalencia(this.id, this.checked)"> Redes <br>
-        <input type="checkbox" id="eep2013" onclick="destacaEquivalencia(this.id, this.checked)"> Empreendimentos Empresariais <br>
-        <input type="checkbox" id="wb3_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desesenvolvimento para Web III <br>
-        <input type="checkbox" id="sem1_sem2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Seminário I e Seminário II  <br>
-        <input type="checkbox" id="sif2013" onclick="destacaEquivalencia(this.id, this.checked)"> Sistemas de Informação <br>
-        <input type="checkbox" id="fds1_fds2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Ferramentas Desenv. Software
+        <input type="checkbox" id="eep2013" onclick="destacaEquivalencia(this.id, this.checked)"> Empreendimentos
+        Empresariais <br>
+        <input type="checkbox" id="wb3_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desesenvolvimento
+        para Web III <br>
+        <input type="checkbox" id="sem1_sem2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Seminário I e
+        Seminário II <br>
+        <input type="checkbox" id="sif2013" onclick="destacaEquivalencia(this.id, this.checked)"> Sistemas de Informação
+        <br>
+        <input type="checkbox" id="fds1_fds2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Ferramentas
+        Desenv. Software
         I e Ferramentas Desenv. Software II <br>
-        <input type="checkbox" id="reconhecimento_padroes2013" onclick="destacaEquivalencia(this.id, this.checked)"> Reconhecimento de
+        <input type="checkbox" id="reconhecimento_padroes2013" onclick="destacaEquivalencia(this.id, this.checked)">
+        Reconhecimento de
         Padrões <br>
         <input type="checkbox" id="desenvolvimento_de_aplicativos2013_desenvolvimento_de_aplicativos_embarcados2013"
-            onclick="destacaEquivalencia(this.id, this.checked)"> Desenv. Aplic. Disp. Móveis e Desenv. Aplic. Disp. Embarcados <br>
-        <input type="checkbox" id="topicos_avancados2013" onclick="destacaEquivalencia(this.id, this.checked)"> Tópicos Avançados <br>        
+            onclick="destacaEquivalencia(this.id, this.checked)"> Desenv. Aplic. Disp. Móveis e Desenv. Aplic. Disp.
+        Embarcados <br>
+        <input type="checkbox" id="topicos_avancados2013" onclick="destacaEquivalencia(this.id, this.checked)"> Tópicos
+        Avançados <br>
         <input type="checkbox" id="libras2013" onclick="destacaEquivalencia(this.id, this.checked)"> Libras <br>
-        <input type="checkbox" id="tecn_sist_geograficos2013" onclick="destacaEquivalencia(this.id, this.checked)"> Tecn. Sistema Inf.
+        <input type="checkbox" id="tecn_sist_geograficos2013" onclick="destacaEquivalencia(this.id, this.checked)">
+        Tecn. Sistema Inf.
         Geográficas <br>
-        <input type="checkbox" id="tcc2013" onclick="destacaEquivalencia(this.id, this.checked)"> Trabalho de Conclusão de Curso <br>        
-        <input type="checkbox" id="horas_complementares2013" onclick="destacaEquivalencia(this.id, this.checked)"> Horas Complementares <br>
+        <input type="checkbox" id="tcc2013" onclick="destacaEquivalencia(this.id, this.checked)"> Trabalho de Conclusão
+        de Curso <br>
+        <input type="checkbox" id="horas_complementares2013" onclick="destacaEquivalencia(this.id, this.checked)"> Horas
+        Complementares <br>
         <!-- <button onclick="limparEquivalencias()">Limpar Equivalência</button> -->
     </div>
     <div>
@@ -368,7 +394,8 @@
                 <td class="em_branco"></td>
                 <td class="atividades_complementares"><b>ENADE</b></td>
             </tr>
-        </table>     
+        </table>
     </div>
 </body>
+
 </html>
