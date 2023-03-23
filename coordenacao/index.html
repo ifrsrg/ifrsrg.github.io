@@ -108,46 +108,125 @@
         }
     </style>
     <script type="text/javascript">
-        var ocp = ["fcp"];
-        var pmd = ["lgp"];
-        var dif = ["ihc"];
-        var esf = ["sif"];
-        var pmb = ["sif"];
-        var fmd = ["mbs"];
-        var sop = ["ocp", "pmd"];
-        var poo = ["pmd"];
-        var dit = ["dif", "pmd"];
-        var aps = ["esf"];
-        var iob = ["lgp", "fmd", "pmb"];
-        var fee = ["mbs"];
-        var ppp = ["poo", "aps"];
-        var wb1 = ["poo", "dit", "iob"];
-        var wb2 = ["wb1", "ppp"];
-        var edd = ["sop"];
-        var aps = ["esf"];
-        var fie = ["fee"];
-        var pbd = ["iob"];
-        var gpj = ["aps"];
-        var ppa = ["ppp"];
-        var rcp = ["edd"];
-        var edd = ["sop"];
-        var qsf = ["gpj"];
-        var eep = ["gpj"];
-        var tci = ["rcp"];
-        var tds = ["ppa"];
-        var tda = ["wb2"];
-        var tbd = ["pbd"];
-        var tas = ["qsf"];
-        var sem = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "tcc"];
-        var acc = ["poo", "dit", "sop", "aps", "iob", "fee"];
-        var tcc = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "sem"];
-        var mct = ["fie"];
+        var ementa_fcp = "Histórico e evolução dos computadores e da computação. Classificação dos softwares e como são desenvolvidos. Interface de linha de comando. Formas de representação numérica e bases binária, octal, decimal e hexadecimal. Conversão entre bases numéricas. Aritmética binária. Representação dos números em precisão simples e dupla. Conceitos da organização do hardware, funcionamento da CPU e organização da memória.";
+        var ementa_lgp = "Algoritmos, pseudocódigo, programação imperativa e estruturada. Tipos de dados fundamentais. Expressões e statements. Literais, identificadores, constantes e variáveis, declaração e atribuição. Coerção. Entrada e saída. Expressões numéricas e booleanas, controle de fluxo, condicionais e estruturas de repetições. Noções de vetores, matrizes e funções."; 
+        var ementa_ihc = "Conceitos básicos de Interação Humano-Computador (IHC). Noções de Arquitetura da Informação. Aspectos cognitivos e culturais do design, modelos mentais e princípios de percepção, memorização e atenção dos usuários. Usabilidade. Acessibilidade. Prototipação. Noções de implementação de interfaces.";
+        var ementa_sif =  "Introdução à Teoria Geral de Sistemas. Tipos de Sistemas de Informação: transacionais, de Informação gerencial (SIG), de Apoio à Decisão (SAD), Sistemas de Informação para Executivos (SIE). Conceitos e Tecnologias presentes na implantação de Sistemas ERP – Planejamento de Recursos Empresariais, CRM - Customer Relationship Management, BI– Business Intelligence, KM - Gestão do Conhecimento e BSC – Balanced Scorecard. Conceitos Básicos de Governança e Qualidade de Serviços de TI.";
+        var ementa_tsc = "Tecnologia e Sociedade. Ética. Educação Ambiental, Direitos Humanos, Educação das Relações Étnico-Raciais, História e Cultura Afro-Brasileira, Africana e Indígena.";
+        var ementa_mbs = "Conjuntos, sua definição e suas operações. Conjuntos Numéricos e suas operações. Relações e seus tipos. Relações Binárias e o Plano Cartesiano. Representação Matricial. Funções, sua definição e as funções básicas: identidade, valor absoluto e percentual.";
 
+        var ocp = ["fcp"];
+        var ementa_ocp = "Estrutura básica de computadores. A Unidade Central de Processamento. Estruturas de barramentos. Organização de memória. Sistemas de entrada/saída. Suporte ao sistema operacional. Padrões de arquiteturas. Introdução a arquiteturas dedicadas. Linguagem de montagem.";
+        
+        var pmd = ["lgp"];
+        var ementa_pmd = "Tipos primitivos, compostos e referenciados. Estruturas de dados elementares: registros, cadeias, arranjos (vetores), matrizes, listas, conjuntos e vetores associativos. Funções: assinatura, parâmetros, passagem por valor (cópia) e referência, retornos, tratamento de erros e exceções, encadeamento e empilhamento. Modularização e reuso. Modelagem, implementação e testes. Noções de orientação a objetos."; 
+        
+        var dif = ["ihc"];
+        var ementa_dif = "Planejamento e implementação da interface com o usuário usando linguagens de programação e ferramentas que permitam a estruturação da informação e definição da aparência em diversos dispositivos. Noções de interação do usuário.";
+
+        var esf = ["sif"];
+        var ementa_esf = "Ciclo de vida do software, estágios do software, modelos de processo de software, metodologias e técnicas de desenvolvimento de software, documentação do software, engenharia de requisitos, técnicas de diagramação de software.";
+
+        var pmb = ["sif"];
+        var ementa_pmb = "Introdução aos conceitos básicos de banco de dados e sistemas gerenciadores de banco de dados. Projeto de banco de dados. Modelagem conceitual, lógica e física de banco de dados relacionais. Noções de linguagem para implementação e operação.";
+
+        var fmd = ["mbs"];
+        var ementa_fmd = "Estudo dos princípios fundamentais da lógica: cálculo proposicional, proposições, operações lógicas e argumentos válidos; e da matemática discreta: álgebra dos conjuntos, operações com conjuntos, álgebra booleana, relações entre a álgebra de conjuntos e a álgebra de proposições, relações binárias. Teoria dos números. Indução Matemática. Somatórios e Combinatórios."; 
+
+        var sop = ["ocp", "pmd"];
+        var ementa_sop = "Introdução aos Sistemas Operacionais. Ambientes operacionais: monousuário e multiusuário. Objetivos do sistema operacional. Arquitetura e medidas de eficiência. Estrutura dos Sistemas Operacionais: gerência de memória, gerência de processos, gerência de arquivos e gerência de dispositivos. Estudos de caso. Programação concorrente.";
+
+        var poo = ["pmd"];
+        var ementa_poo = "Conceitos e princípios de programação orientada a objetos: abstração, classes, instâncias, estado e comportamento, atributos e métodos, comandos e consultas, coesão, encapsulamento, associação, agregação, composição, delegação, dependência e acoplamento, herança e polimorfismo. Modelagem, implementação e testes. Noções de princípios e padrões de projeto.";
+
+        var dit = ["dif", "pmd"];
+        var ementa_dit = "Planejamento e implementação da interação do usuário usando linguagens, princípios e padrões que permitam a programação do comportamento das interfaces.";        
+
+        var aps = ["esf"];
+        var ementa_aps = "Modelagem com SysML; Princípios de modelagem OO, Linguagem de Modelagem Unificada (UML), Diagramas Estruturais (Classe, Objeto, Pacote, Estrutura composta, Componentes, Implantação, Perfil), Diagramas Comportamentais (Caso de Uso, Atividade e Máquina de Estados) e Diagramas de Interação (Sequência, Comunicação, Interação Geral e Tempo).";      
+        
+        var iob = ["lgp", "fmd", "pmb"];
+        var ementa_iob = "Modelo relacional. Linguagem para definição, manipulação e consulta de dados. Normalização. Noções de programação em bancos de dados.";
+
+        var fee = ["mbs"];
+        var ementa_fee = "Introdução: princípios do Pensamento Estatístico (PE) e Aprendizagem por Problema (PBL) estatístico. Produção de dados: indivíduo, atributo e  variável, Dado Estatístico e Informação Estatística. Retratar a variação em gráficos: histograma, gráficos de barras, gráficos de setores, gráficos de dispersão e Box-Plot. Descrever a variação em números: medidas de posição, dispersão, assimetria e curtose. Associação entre variáveis: análise bidimensional básica";
+
+        var ppp = ["poo", "aps"];
+        var ementa_ppp = "Conceitos de projeto: hierarquia, abstração, modularização e encapsulamento. Decisões de projeto quanto ao uso de herança, composição e delegação. Princípios de projeto de software, como o SOLID e outros. Refatoração. Padrões de projeto de software GoF e emergentes. Anti-padrões. Noções de princípios e padrões de arquitetura."; 
+
+        var wb1 = ["poo", "dit", "iob"];
+        var ementa_wb1 = "Arquitetura da web. Noções do protocolo HTTP e funcionamento de um servidor web. Linguagem de script para desenvolvimento web no servidor. Dados de sessão. Integração com SGBDs e outras fontes de dados. Noções de web frameworks."; 
+
+        var wb2 = ["wb1", "ppp"];
+        var ementa_wb2 = "Principais frameworks para o desenvolvimento de aplicativos corporativos e seus padrões arquiteturais. Organização em um padrão arquitetural e uso de frameworks para o desenvolvimento de aplicações que produzem páginas Web dinâmicas e aplicações que produzem e consomem formatos intercambiáveis de dados. Implantação."; 
+        
+        var edd = ["sop"];
+        var ementa_edd = "Tipos Abstratos de Dados: arranjos, pilhas, filas, listas e tabelas de dispersão. Métodos de ordenação e pesquisa. Noções de árvores, grafos e de complexidade de algoritmos.";
+        
+        // var aps = ["esf"];
+        
+        var fie = ["fee"];
+        var ementa_fie = "Introdução: problemas de inferência e distribuição de probabilidade de uma variável aleatória. Técnicas de inferências estatística: distribuição amostral, seleção de amostras, intervalo de confiança e teste de hipóteses. Aplicações computacionais.";
+
+        var pbd = ["iob"];
+        var ementa_pbd = "Funções. Estruturas de controle. Procedures. Cursores. Gatilhos. Tratamento de erros e mensagens.";
+        
+        var gpj = ["aps"];
+        var ementa_gpj = "Conceitos envolvendo projetos, Modelo Tradicional de Gerenciamento - papel do gerente, Áreas de Gerenciamento de Projetos (integração, escopo, tempo, custo, qualidade, RH, comunicações, riscos, aquisições e partes interessadas), Gerenciamento Ágil de Projeto.";
+        
+        var ppa = ["ppp"];
+        var ementa_ppa = "Tipos de aplicativos e visão geral das plataformas para desenvolvimento e implantação. Atributos qualitativos. Estilos arquiteturais. Princípios e padrões de arquitetura de software para lógica de domínio, apresentação e integração com serviços externos e bancos de dados. Arquitetura orientada a serviços. Crosscutting concerns. Modelagem, implementação, empacotamento e distribuição de componentes, bibliotecas e frameworks.";
+        
+        var rcp = ["edd"];
+        var ementa_rcp = "Modelos de referência OSI/ISO e TCP/IP. Topologias, protocolos e serviços em redes, associados aos diversos níveis dos modelos de referência. Noções de Interligação, gerenciamento, segurança e aplicações de redes de computadores.";
+
+        var edd = ["sop"];
+        
+        var qsf = ["gpj"];
+        var ementa_qsf = "Introdução a Qualidade, Histórico da qualidade; Conceitos de qualidade; Normas ISO de Processo de Software; Normas ISO de Produto de Software; Níveis de Maturidade e Capacidade de Software.";
+
+        var eep = ["gpj"];
+        var ementa_eep = "Introdução à Administração. Teorias em Administração. Relações humanas, competências e liderança. Conceitos básicos sobre a Gestão de Operações, Recursos Humanos, Marketing e Finanças. Empreendedorismo. Técnicas e procedimentos para elaboração de planos de negócios. Planejamento Estratégico. Precificação de Software. Noções de qualidade e produtividade."; 
+        
+        var tci = ["rcp"];
+        var ementa_tci = "Noções de segurança de sistemas, reconhecimento de padrões, inteligência artificial, ciência de dados, algoritmos e tópicos emergentes.";
+
+        var tds = ["ppa"];
+        var ementa_tds = "Noções de integração de sistemas, manutenção de sistemas legados, novos princípios e práticas para a implementação, projeto e arquitetura de sistemas, tópicos emergentes no back-end.";
+        
+        var tda = ["wb2"];
+        var ementa_tda = "Noções de desenvolvimento de aplicativos para dispositivos móveis, embarcados e vestíveis, noções de desenvolvimento de jogos e tópicos emergentes no front-end.";
+
+        var tbd = ["pbd"];
+        var ementa_tbd = "Noções de bancos de dados não-relacionais, tuning, OLAP, pivotamento, particionamento, sharding e tópicos emergentes em bancos de dados.";
+        
+        var tas = ["qsf"];
+        var ementa_tas = "Noções de sistemas de apoio à decisão, business intelligence, verificação e validação, testes automatizados e tópicos emergentes na análise de sistemas e negócios.";
+        
+        var sem = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "tcc"];
+        var ementa_sem = "Apresentação de projetos, seminários e palestras relevantes à formação do futuro profissional de TI.";
+
+        var acc = ["poo", "dit", "sop", "aps", "iob", "fee"];
+
+        var tcc = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "sem"];
+        var ementa_tcc = "Condução de um trabalho de pesquisa acadêmico/científico ou projeto e desenvolvimento de tecnologia/profissional ou planejamento de empreendimento empresarial na área de TIC. Este componente de TCC deve ser realizado concomitantemente ao de Seminários ou após este."; 
+        
+        var mct = ["fie"];
+        var ementa_mct = "História do pensamento científico e seus métodos. Os aspectos básicos da pesquisa: formulação do problema, objetivos, hipóteses e variáveis. Técnicas de redação e apresentação do trabalho científico. Princípios norteadores do trabalho científico."; 
+        
+        var ementa_optativa = "Inglês técnico:\nRevisão gramatical e sintática básica da língua inglesa. Expressões técnicas e estruturas básicas da língua para leitura e compreensão de textos diversos na área do curso. Estratégias de leitura em língua inglesa e usos do dicionário como ferramenta instrumental. Interpretação de textos técnicos a partir do desenvolvimento de habilidades de leitura e do estudo de itens gramaticais sistematizados referentes à linguagem tecnológica específica. Abordagem integrada dos níveis de compreensão de leitura, suas estratégias e aspectos léxico gramaticais; \n\n Libras:\nCriar possibilidades metodológicas de interação e integração da comunidade acadêmica ouvinte, com pessoas surdas usuárias da Língua de Sinais da cidade do Rio Grande. Conceituar Libras, explorando os fundamentos históricos da educação de surdos, os aspectos linguísticos da Língua, além de sinais específicos da área.";         
+       
         function limpar() {
             var array = document.querySelectorAll("td");
             for (let index = 0; index < array.length; index++) {
                 array[index].style = "";
             }
+        }
+
+        function mostraEmenta(id){            
+            // limpar();
+            var ementa = eval("ementa_"+id);        
+            alert(ementa);
         }
 
         function destacaRequisito(id) {
@@ -177,90 +256,92 @@
             <td class="semestre"><b>6º Sem.</b></td>
         </tr>
         <tr>
-            <td id="fcp" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Fundamentos<br>da Computação</b><br>4 aulas semanais 66h</td>
-            <td id="ocp" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Organização<br>de Computadores</b><br>2 aulas semanais 33h</td>
-            <td id="sop" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Sistemas<br>Operacionais</b><br>2 aulas semanais 33h</td>
-            <td id="edd" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Estrutura<br>de Dados</b><br>4 aulas semanais 66h</td>
-            <td id="rcp" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Redes<br>de Computadores</b><br>4 aulas semanais 66h</td>
-            <td id="tci" class="ciencia_computacao" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos
-                    em Ciência<br>da Computação</b><br>2 aulas semanais 33h</td>
+            <td id="fcp" class="ciencia_computacao">
+                <b onclick="destacaRequisito('fcp')" ondblclick="limpar()">Fundamentos<br>da Computação</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('fcp')">Ementa</a></td>
+            <td id="ocp" class="ciencia_computacao">
+                <b onclick="destacaRequisito('ocp')" ondblclick="limpar()">Organização<br>de Computadores</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('ocp')">Ementa</a></td>
+            <td id="sop" class="ciencia_computacao">
+                <b onclick="destacaRequisito('sop')" ondblclick="limpar()">Sistemas<br>Operacionais</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('sop')">Ementa</a></td>
+            <td id="edd" class="ciencia_computacao">
+                <b onclick="destacaRequisito('edd')" ondblclick="limpar()">Estrutura<br>de Dados</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('edd')">Ementa</a></td>
+            <td id="rcp" class="ciencia_computacao">
+                <b onclick="destacaRequisito('rcp')" ondblclick="limpar()">Redes<br>de Computadores</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('rcp')">Ementa</a></td>
+            <td id="tci" class="ciencia_computacao" ><b onclick="destacaRequisito('tci')" ondblclick="limpar()">Tópicos
+                    em Ciência<br>da Computação</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tci')">Ementa</a></td>
         </tr>
         <tr>
-            <td id="lgp" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Lógica<br>de Programação</b><br>6 aulas semanais 100h</td>
-            <td id="pmd" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Programação<br>Modular</b><br>4 aulas semanais 66h</td>
-            <td id="poo" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Programação<br>Orientada a Objetos</b><br>4 aulas semanais 66h</td>
-            <td id="ppp" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Princípios e Padrões<br>de Projeto</b><br>4 aulas semanais 66h</td>
-            <td id="ppa" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Princípios e Padrões<br>de Arquitetura</b><br>4 aulas semanais 66h</td>
-            <td id="tds" class="desenvolvimento_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Tópicos em<br>Desenvolvimento<br>de Sistemas</b><br>2 aulas semanais 33h</td>
+            <td id="lgp" class="desenvolvimento_de_sistemas">
+                <b onclick="destacaRequisito('lgp')" ondblclick="limpar()">Lógica<br>de Programação</b><br>6 aulas semanais 100h<br><a href="javascript:void(0)" onclick="mostraEmenta('lgp')">Ementa</a></td>
+            <td id="pmd" class="desenvolvimento_de_sistemas">
+                <b onclick="destacaRequisito('pmd')" ondblclick="limpar()">Programação<br>Modular</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('pmd')">Ementa</a></td>
+            <td id="poo" class="desenvolvimento_de_sistemas">
+                <b onclick="destacaRequisito('poo')" ondblclick="limpar()">Programação<br>Orientada a Objetos</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('poo')">Ementa</a></td>
+            <td id="ppp" class="desenvolvimento_de_sistemas">
+                <b onclick="destacaRequisito('ppp')" ondblclick="limpar()">Princípios e Padrões<br>de Projeto</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('ppp')">Ementa</a></td>
+            <td id="ppa" class="desenvolvimento_de_sistemas">
+                <b onclick="destacaRequisito('ppa')" ondblclick="limpar()">Princípios e Padrões<br>de Arquitetura</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('ppa')">Ementa</a></td>
+            <td id="tds" class="desenvolvimento_de_sistemas">
+                <b onclick="destacaRequisito('tds')" ondblclick="limpar()">Tópicos em<br>Desenvolvimento<br>de Sistemas</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tds')">Ementa</a></td>
         </tr>
         <tr>
-            <td id="ihc" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)"
-                ondblclick="limpar()"><b>Fundamentos de<br>Interação Humano-<br>Computador</b><br>2 aulas semanais 33h
+            <td id="ihc" class="desenvolvimento_de_aplicativos">
+                <b onclick="destacaRequisito('ihc')" ondblclick="limpar()">Fundamentos de<br>Interação Humano-<br>Computador</b><br>2 aulas semanais 33h
+                <br><a href="javascript:void(0)" onclick="mostraEmenta('ihc')">Ementa</a>
             </td>
-            <td id="dif" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)"
-                ondblclick="limpar()"><b>Design<br>de Interface</b><br>4 aulas semanais 66h</td>
-            <td id="dit" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)"
-                ondblclick="limpar()"><b>Design<br>de Interação</b><br>4 aulas semanais 66h</td>
-            <td id="wb1" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)"
-                ondblclick="limpar()"><b>Desenvolvimento<br>de Aplicativos<br>WEBI</b><br>4 aulas semanais 66h</td>
-            <td id="wb2" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)"
-                ondblclick="limpar()"><b>Desenvolvimento<br>de Aplicativos<br>WEBII</b><br>4 aulas semanais 66h</td>
-            <td id="tda" class="desenvolvimento_de_aplicativos" onclick="destacaRequisito(this.id)"
-                ondblclick="limpar()"><b>Tópicos em<br>Desenvolvimento<br>de Aplicativos</b><br>2 aulas semanais 33h
+            <td id="dif" class="desenvolvimento_de_aplicativos"><b onclick="destacaRequisito('dif')"
+                ondblclick="limpar()">Design<br>de Interface</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('dif')">Ementa</a></td>
+            <td id="dit" class="desenvolvimento_de_aplicativos"><b onclick="destacaRequisito('dit')"
+                ondblclick="limpar()">Design<br>de Interação</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('dit')">Ementa</a></td>
+            <td id="wb1" class="desenvolvimento_de_aplicativos"><b onclick="destacaRequisito('wb1')"
+                ondblclick="limpar()">Desenvolvimento<br>de Aplicativos<br>WEBI</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('wb1')">Ementa</a></td>
+            <td id="wb2" class="desenvolvimento_de_aplicativos"><b onclick="destacaRequisito('wb2')"
+                ondblclick="limpar()">Desenvolvimento<br>de Aplicativos<br>WEBII</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('wb2')">Ementa</a></td>
+            <td id="tda" class="desenvolvimento_de_aplicativos"><b onclick="destacaRequisito('tda')"
+                ondblclick="limpar()">Tópicos em<br>Desenvolvimento<br>de Aplicativos</b><br>2 aulas semanais 33h  <br><a href="javascript:void(0)" onclick="mostraEmenta('tda')">Ementa</a>
             </td>
         </tr>
         <tr>
-            <td id="sif" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Sistemas<br>de Informação</b><br>4 aulas semanais 66h</td>
-            <td id="esf" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Engenharia<br>de Software</b><br>4 aulas semanais 66h </td>
-            <td id="aps" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Análise e<br>Projeto de Software</b><br>4 aulas semanais 66h</td>
-            <td id="gpj" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Gerência<br>de Projeto</b><br>4 aulas semanais 66h</td>
-            <td id="qsf" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Qualidade<br>de Software</b><br>2 aulas semanais 33h </td>
-            <td id="tas" class="analise_de_sistemas" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Tópicos em Análise<br>de Sistemas</b><br>2 aulas semanais 33h</td>
+            <td id="sif" class="analise_de_sistemas">
+                <b onclick="destacaRequisito('sif')" ondblclick="limpar()">Sistemas<br>de Informação</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('sif')">Ementa</a></td>
+            <td id="esf" class="analise_de_sistemas">
+                <b onclick="destacaRequisito('esf')" ondblclick="limpar()">Engenharia<br>de Software</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('esf')">Ementa</a> </td>
+            <td id="aps" class="analise_de_sistemas">
+                <b onclick="destacaRequisito('aps')" ondblclick="limpar()">Análise e<br>Projeto de Software</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('aps')">Ementa</a></td>
+            <td id="gpj" class="analise_de_sistemas">
+                <b onclick="destacaRequisito('gpj')" ondblclick="limpar()">Gerência<br>de Projeto</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('gpj')">Ementa</a></td>
+            <td id="qsf" class="analise_de_sistemas">
+                <b onclick="destacaRequisito('qsf')" ondblclick="limpar()">Qualidade<br>de Software</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('qsf')">Ementa</a> </td>
+            <td id="tas" class="analise_de_sistemas">
+                <b onclick="destacaRequisito('tas')" ondblclick="limpar()">Tópicos em Análise<br>de Sistemas</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tas')">Ementa</a></td>
         </tr>
         <tr>
-            <td id="tsc" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos
-                    em<br>Tecnologia e<br>Sociedade</b><br>2 aulas semanais 33h </td>
-            <td id="pmb" class="banco_de_dados" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Projeto
-                    e<br>Modelagem de<br>Banco de Dados</b><br>2 aulas semanais 33h</td>
-            <td id="iob" class="banco_de_dados" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Implementação e<br>Operação de Banco de<br>Dados</b><br>4 aulas semanais 66h</td>
-            <td id="pbd" class="banco_de_dados" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Programação
-                    em<br>Banco De Dados</b><br>2 aulas semanais 33h</td>
-            <td id="eep" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Empreendimentos<br>Empresariais</b><br>4 aulas semanais 66h</td>
-            <td id="tbd" class="banco_de_dados" onclick="destacaRequisito(this.id)" ondblclick="limpar()"><b>Tópicos
-                    em<br>Banco De Dados</b><br>2 aulas semanais 33h</td>
+            <td id="tsc" class="area_geral">
+                <b onclick="destacaRequisito('tsc')" ondblclick="limpar()">Tópicos
+                    em<br>Tecnologia e<br>Sociedade</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tsc')">Ementa</a></td>
+            <td id="pmb" class="banco_de_dados"><b onclick="destacaRequisito('pmb')" ondblclick="limpar()">Projeto
+                    e<br>Modelagem de<br>Banco de Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('pmb')">Ementa</a></td>
+            <td id="iob" class="banco_de_dados">
+                <b onclick="destacaRequisito('iob')" ondblclick="limpar()">Implementação e<br>Operação de Banco de<br>Dados</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('iob')">Ementa</a></td>
+            <td id="pbd" class="banco_de_dados"><b onclick="destacaRequisito('pbd')" ondblclick="limpar()">Programação
+                    em<br>Banco De Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('pbd')">Ementa</a></td>
+            <td id="eep" class="area_geral">
+                <b onclick="destacaRequisito('eep')" ondblclick="limpar()">Empreendimentos<br>Empresariais</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('eep')">Ementa</a></td>
+            <td id="tbd" class="banco_de_dados"><b onclick="destacaRequisito('tbd')" ondblclick="limpar()">Tópicos
+                    em<br>Banco De Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tbd')">Ementa</a></td>
         </tr>
         <tr>
-            <td id="mbs" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Matemática<br>Básica</b><br>2 aulas semanais 33h</td>
-            <td id="fmd" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Fundamentos<br>de Matemática<br>Discreta</b><br>4 aulas semanais 66h</td>
-            <td id="fee" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Fundamentos<br>de Estatística<br>Exploratória</b><br>2 aulas semanais 33h</td>
-            <td id="fie" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Fundamentos<br>de Inferência<br>Estatística</b><br>2 aulas semanais 33h</td>
-            <td id="mct" class="area_geral" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Metodologia<br>Científica</b><br>2 aulas semanais 33h</td>
-            <td id="optativa" class="area_geral_optativa" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Libras/Inglês</b><br>(optativa)<br>2 aulas semanais 33h</td>
+            <td id="mbs" class="area_geral">
+                <b  onclick="destacaRequisito('mbs')" ondblclick="limpar()">Matemática<br>Básica</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('mbs')">Ementa</a></td>
+            <td id="fmd" class="area_geral">
+                <b  onclick="destacaRequisito('fmd')" ondblclick="limpar()">Fundamentos<br>de Matemática<br>Discreta</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('fmd')">Ementa</a></td>
+            <td id="fee" class="area_geral">
+                <b  onclick="destacaRequisito('fee')" ondblclick="limpar()">Fundamentos<br>de Estatística<br>Exploratória</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('fee')">Ementa</a></td>
+            <td id="fie" class="area_geral">
+                <b  onclick="destacaRequisito('fie')" ondblclick="limpar()">Fundamentos<br>de Inferência<br>Estatística</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('fie')">Ementa</a></td>
+            <td id="mct" class="area_geral">
+                <b  onclick="destacaRequisito('mct')" ondblclick="limpar()">Metodologia<br>Científica</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('mct')">Ementa</a></td>
+            <td id="optativa" class="area_geral_optativa">
+                <b onclick="destacaRequisito('optativa')" ondblclick="limpar()">Libras/Inglês</b><br>(optativa)<br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('optativa')">Ementa</a></td>
         </tr>
         <tr>
             <td class="em_branco"></td>
@@ -269,8 +350,8 @@
             <td id="acc" class="atividades_complementares" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
                 <b>Atividades<br>Complementares<br>Curriculares</b><br>66h</td>
             <td class="em_branco"></td>
-            <td id="sem" class="producao_cientifica" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Seminários</b><br>10 aulas semanais 166h</td>
+            <td id="sem" class="producao_cientifica">
+                <b onclick="destacaRequisito('sem')" ondblclick="limpar()">Seminários</b><br>10 aulas semanais 166h<br><a href="javascript:void(0)" onclick="mostraEmenta('sem')">Ementa</a></td>
         </tr>
         <tr>
             <td class="em_branco"></td>
@@ -278,8 +359,8 @@
             <td class="em_branco"></td>
             <td class="em_branco"></td>
             <td class="em_branco"></td>
-            <td id="tcc" class="producao_cientifica" onclick="destacaRequisito(this.id)" ondblclick="limpar()">
-                <b>Trabalho de<br>Conclusão de Curso</b><br>66h</td>
+            <td id="tcc" class="producao_cientifica">
+                <b onclick="destacaRequisito('tcc')" ondblclick="limpar()">Trabalho de<br>Conclusão de Curso</b><br>66h<br><a href="javascript:void(0)" onclick="mostraEmenta('tcc')">Ementa</a></td>
         </tr>
         <tr>
             <td class="em_branco"></td>
@@ -326,7 +407,7 @@
         <table>
             <tr>
                 <td><span style="border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)"> &nbsp; &nbsp;
-                        &nbsp; &nbsp;</span> Disciplina e seus Pré-Requisitos</td>
+                        &nbsp; &nbsp;</span> Disciplina e seus Pré-Requisitos (1 clique)</td>
             </tr>
         </table>
     </div>
