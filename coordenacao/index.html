@@ -229,14 +229,15 @@
 
         function destacaRequisito(id) {
             limpar();
-            // var className = document.getElementById(id).className;                        
-            document.getElementById(id).style = "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";
-            // document.getElementById(id).className = "atividades_complementares"; 
-            
             var vetRequisito = eval(id);
-            for (let index = 0; index < vetRequisito.length; index++) {
-                document.getElementById(vetRequisito[index]).style =
+            if (vetRequisito.length > 0) {
+                // var className = document.getElementById(id).className;                        
+                document.getElementById(id).style = "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";            
+                // var vetRequisito = eval(id);
+                for (let index = 0; index < vetRequisito.length; index++) {
+                    document.getElementById(vetRequisito[index]).style =
                     "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";
+                }
             }
         }
     </script>
