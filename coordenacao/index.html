@@ -232,8 +232,10 @@
         function destacaRequisito(id) {
             limpar();
             // var className = document.getElementById(id).className;            
-            document.getElementById(id).style =
-            "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";
+            
+            document.getElementById(id).style = "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";
+            // document.getElementById(id).className = "atividades_complementares"; 
+            
             var vetRequisito = eval(id);
             for (let index = 0; index < vetRequisito.length; index++) {
                 document.getElementById(vetRequisito[index]).style =
@@ -368,7 +370,7 @@
             <td class="em_branco"></td>
             <td class="em_branco"></td>
             <td class="em_branco"></td>
-            <td class="atividades_complementares" ondblclick="limpar()"><b>ENADE</b></td>
+            <td class="atividades_complementares"><b>ENADE</b></td>
         </tr>
     </table>
     <!--<br>
