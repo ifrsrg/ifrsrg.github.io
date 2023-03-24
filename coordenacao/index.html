@@ -215,9 +215,17 @@
         
         var ementa_optativa = "Inglês técnico:\nRevisão gramatical e sintática básica da língua inglesa. Expressões técnicas e estruturas básicas da língua para leitura e compreensão de textos diversos na área do curso. Estratégias de leitura em língua inglesa e usos do dicionário como ferramenta instrumental. Interpretação de textos técnicos a partir do desenvolvimento de habilidades de leitura e do estudo de itens gramaticais sistematizados referentes à linguagem tecnológica específica. Abordagem integrada dos níveis de compreensão de leitura, suas estratégias e aspectos léxico gramaticais; \n\n Libras:\nCriar possibilidades metodológicas de interação e integração da comunidade acadêmica ouvinte, com pessoas surdas usuárias da Língua de Sinais da cidade do Rio Grande. Conceituar Libras, explorando os fundamentos históricos da educação de surdos, os aspectos linguísticos da Língua, além de sinais específicos da área.";         
        
-        function limpar(id) {
+        function limpar(id) {                           
+            
+            
+            var vetSpan = document.querySelectorAll("span");
+            for (let index = 0; index < vetSpan.length; index++) {                
+                vetSpan[index].innerHTML = "<a href=\"javascript:void(0)\" onclick=\"destacaRequisito('"+vetSpan[index].id.replace("span_", "")+"')\">Pré-Requisitos</a>";           
+            }
+            /*
             var a = eval("span_"+id);
-            a.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"destacaRequisito('"+id+"')\">Pré-Requisitos</a>";            
+            a.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"destacaRequisito('"+id+"')\">Pré-Requisitos</a>";                       
+            */
             var array = document.querySelectorAll("td");
             for (let index = 0; index < array.length; index++) {
                 array[index].style = "";
@@ -231,9 +239,9 @@
         }
 
         function destacaRequisito(id) {
-            // limpar();
+            limpar(id);            
             var a = eval("span_"+id);
-            a.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"limpar('"+id+"')\">Desativar</a>";            
+            a.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"limpar('"+id+"')\">Desativar</a>";          
             var vetRequisito = eval(id);
             if (vetRequisito.length > 0) {
                 // var className = document.getElementById(id).className;                        
