@@ -202,13 +202,15 @@
         var tas = ["qsf"];
         var ementa_tas = "Noções de sistemas de apoio à decisão, business intelligence, verificação e validação, testes automatizados e tópicos emergentes na análise de sistemas e negócios.";
         
-        var sem = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "tcc"];
+        var sem = ["rcp", "ppa", "wb2", "qsf", "eep", "mct"];
+        var co_sem = ["tcc"]; 
         var ementa_sem = "Apresentação de projetos, seminários e palestras relevantes à formação do futuro profissional de TI.";
 
         var acc = ["poo", "dit", "sop", "aps", "iob", "fee"];
         var ementa_acc = "Os cursos superiores de tecnologia estarão organizados em uma base de conhecimentos científicos e tecnológicos, dessa maneira poderão ser previstas horas de atividades complementares realizadas por meio de desenvolvimento de projetos integradores/técnicos, de extensão e/ou de pesquisa e outras formas de atividades acadêmico-científico-culturais. Maiores informações: Artigos 243 e 244 da Organização Didática.";
 
-        var tcc = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "sem"];
+        var tcc = ["rcp", "ppa", "wb2", "qsf", "eep", "mct"];
+        var co_tcc = ["sem"];
         var ementa_tcc = "Condução de um trabalho de pesquisa acadêmico/científico ou projeto e desenvolvimento de tecnologia/profissional ou planejamento de empreendimento empresarial na área de TIC. Este componente de TCC deve ser realizado concomitantemente ao de Seminários ou após este."; 
         
         var mct = ["fie"];
@@ -221,11 +223,11 @@
             
             var vetSpan = document.querySelectorAll("span");
             for (let index = 0; index < vetSpan.length; index++) {                
-                vetSpan[index].innerHTML = "<a href=\"javascript:void(0)\" onclick=\"destacaRequisito('"+vetSpan[index].id.replace("span_", "")+"')\">Pré-Requisitos</a>";           
+                vetSpan[index].innerHTML = "<a href=\"javascript:void(0)\" onclick=\"destacaRequisito('"+vetSpan[index].id.replace("span_", "")+"')\">Requisitos</a>";           
             }
             /*
             var a = eval("span_"+id);
-            a.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"destacaRequisito('"+id+"')\">Pré-Requisitos</a>";                       
+            a.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"destacaRequisito('"+id+"')\">Requisitos</a>";                       
             */
             var array = document.querySelectorAll("td");
             for (let index = 0; index < array.length; index++) {
@@ -257,6 +259,16 @@
                     "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";
                 }
             }
+            try {
+                var vetCoRequisito = eval("co_"+id);
+                if (vetCoRequisito.length > 0) {
+                    for (let index = 0; index < vetCoRequisito.length; index++) {
+                        document.getElementById(vetCoRequisito[index]).style = "border: 3px rgb(0,0,0) dashed;";            
+                    }
+                }
+            } catch (e){
+                
+            }
         }
     </script>
 </head>
@@ -277,92 +289,92 @@
             <td id="fcp" class="ciencia_computacao">
                 <b onclick="destacaRequisito('fcp')" ondblclick="limpar()">Fundamentos<br>da Computação</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('fcp')">Ementa</a></td>
             <td id="ocp" class="ciencia_computacao">
-                <b>Organização<br>de Computadores</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('ocp')">Ementa</a><br><span id="span_ocp"><a href="javascript:void(0)" onclick="destacaRequisito('ocp')">Pré-Requisitos</a></span></td>
+                <b>Organização<br>de Computadores</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('ocp')">Ementa</a><br><span id="span_ocp"><a href="javascript:void(0)" onclick="destacaRequisito('ocp')">Requisitos</a></span></td>
             <td id="sop" class="ciencia_computacao">
-                <b>Sistemas<br>Operacionais</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('sop')">Ementa</a><br><span id="span_sop"><a href="javascript:void(0)" onclick="destacaRequisito('sop')">Pré-Requisitos</a></span></td>
+                <b>Sistemas<br>Operacionais</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('sop')">Ementa</a><br><span id="span_sop"><a href="javascript:void(0)" onclick="destacaRequisito('sop')">Requisitos</a></span></td>
             <td id="edd" class="ciencia_computacao">
-                <b>Estrutura<br>de Dados</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('edd')">Ementa</a><br><span id="span_edd"><a href="javascript:void(0)" onclick="destacaRequisito('edd')">Pré-Requisitos</a></span></td>
+                <b>Estrutura<br>de Dados</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('edd')">Ementa</a><br><span id="span_edd"><a href="javascript:void(0)" onclick="destacaRequisito('edd')">Requisitos</a></span></td>
             <td id="rcp" class="ciencia_computacao">
-                <b>Redes<br>de Computadores</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('rcp')">Ementa</a><br><span id="span_rcp"><a href="javascript:void(0)" onclick="destacaRequisito('rcp')">Pré-Requisitos</a></span></td>
+                <b>Redes<br>de Computadores</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('rcp')">Ementa</a><br><span id="span_rcp"><a href="javascript:void(0)" onclick="destacaRequisito('rcp')">Requisitos</a></span></td>
             <td id="tci" class="ciencia_computacao" ><b onclick="destacaRequisito('tci')" ondblclick="limpar()">Tópicos
-                    em Ciência<br>da Computação</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tci')">Ementa</a><br><span id="span_tci"><a href="javascript:void(0)" onclick="destacaRequisito('tci')">Pré-Requisitos</a></span></td>
+                    em Ciência<br>da Computação</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tci')">Ementa</a><br><span id="span_tci"><a href="javascript:void(0)" onclick="destacaRequisito('tci')">Requisitos</a></span></td>
         </tr>
         <tr>
             <td id="lgp" class="desenvolvimento_de_sistemas">
-                <b>Lógica<br>de Programação</b><br>6 aulas semanais 100h<br><a href="javascript:void(0)" onclick="mostraEmenta('lgp')">Ementa</a><!--<br><span id="span_lgp"><a href="javascript:void(0)" onclick="destacaRequisito('lgp')">Pré-Requisitos</a></span>--></td>
+                <b>Lógica<br>de Programação</b><br>6 aulas semanais 100h<br><a href="javascript:void(0)" onclick="mostraEmenta('lgp')">Ementa</a><!--<br><span id="span_lgp"><a href="javascript:void(0)" onclick="destacaRequisito('lgp')">Requisitos</a></span>--></td>
             <td id="pmd" class="desenvolvimento_de_sistemas">
-                <b>Programação<br>Modular</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('pmd')">Ementa</a><br><span id="span_pmd"><a href="javascript:void(0)" onclick="destacaRequisito('pmd')">Pré-Requisitos</a></span></td>
+                <b>Programação<br>Modular</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('pmd')">Ementa</a><br><span id="span_pmd"><a href="javascript:void(0)" onclick="destacaRequisito('pmd')">Requisitos</a></span></td>
             <td id="poo" class="desenvolvimento_de_sistemas">
-                <b>Programação<br>Orientada a Objetos</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('poo')">Ementa</a><br><span id="span_poo"><a href="javascript:void(0)" onclick="destacaRequisito('poo')">Pré-Requisitos</a></span></td>
+                <b>Programação<br>Orientada a Objetos</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('poo')">Ementa</a><br><span id="span_poo"><a href="javascript:void(0)" onclick="destacaRequisito('poo')">Requisitos</a></span></td>
             <td id="ppp" class="desenvolvimento_de_sistemas">
-                <b>Princípios e Padrões<br>de Projeto</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('ppp')">Ementa</a><br><span id="span_ppp"><a href="javascript:void(0)" onclick="destacaRequisito('ppp')">Pré-Requisitos</a></span></td>
+                <b>Princípios e Padrões<br>de Projeto</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('ppp')">Ementa</a><br><span id="span_ppp"><a href="javascript:void(0)" onclick="destacaRequisito('ppp')">Requisitos</a></span></td>
             <td id="ppa" class="desenvolvimento_de_sistemas">
-                <b>Princípios e Padrões<br>de Arquitetura</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('ppa')">Ementa</a><br><span id="span_ppa"><a href="javascript:void(0)" onclick="destacaRequisito('ppa')">Pré-Requisitos</a></span></td>
+                <b>Princípios e Padrões<br>de Arquitetura</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('ppa')">Ementa</a><br><span id="span_ppa"><a href="javascript:void(0)" onclick="destacaRequisito('ppa')">Requisitos</a></span></td>
             <td id="tds" class="desenvolvimento_de_sistemas">
-                <b>Tópicos em<br>Desenvolvimento<br>de Sistemas</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tds')">Ementa</a><br><span id="span_tds"><a href="javascript:void(0)" onclick="destacaRequisito('tds')">Pré-Requisitos</a></span></td>
+                <b>Tópicos em<br>Desenvolvimento<br>de Sistemas</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tds')">Ementa</a><br><span id="span_tds"><a href="javascript:void(0)" onclick="destacaRequisito('tds')">Requisitos</a></span></td>
         </tr>
         <tr>
             <td id="ihc" class="desenvolvimento_de_aplicativos">
                 <b>Fundamentos de<br>Interação Humano-<br>Computador</b><br>2 aulas semanais 33h
-                <br><a href="javascript:void(0)" onclick="mostraEmenta('ihc')">Ementa</a><!--<br><span id="span_ihc"><a href="javascript:void(0)" onclick="destacaRequisito('ihc')">Pré-Requisitos</a></span>-->  </td>
-            <td id="dif" class="desenvolvimento_de_aplicativos"><b>Design<br>de Interface</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('dif')">Ementa</a><br><span id="span_dif"><a href="javascript:void(0)" onclick="destacaRequisito('dif')">Pré-Requisitos</a></span></td>
-            <td id="dit" class="desenvolvimento_de_aplicativos"><b>Design<br>de Interação</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('dit')">Ementa</a><br><span id="span_dit"><a href="javascript:void(0)" onclick="destacaRequisito('dit')">Pré-Requisitos</a></span></td>
-            <td id="wb1" class="desenvolvimento_de_aplicativos"><b>Desenvolvimento<br>de Aplicativos<br>WEBI</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('wb1')">Ementa</a><br><span id="span_wb1"><a href="javascript:void(0)" onclick="destacaRequisito('wb1')">Pré-Requisitos</a></span></td>
-            <td id="wb2" class="desenvolvimento_de_aplicativos"><b>Desenvolvimento<br>de Aplicativos<br>WEBII</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('wb2')">Ementa</a><br><span id="span_wb2"><a href="javascript:void(0)" onclick="destacaRequisito('wb2')">Pré-Requisitos</a></span></td>
-            <td id="tda" class="desenvolvimento_de_aplicativos"><b>Tópicos em<br>Desenvolvimento<br>de Aplicativos</b><br>2 aulas semanais 33h  <br><a href="javascript:void(0)" onclick="mostraEmenta('tda')">Ementa</a><br><span id="span_tda"><a href="javascript:void(0)" onclick="destacaRequisito('tda')">Pré-Requisitos</a></span></td>
+                <br><a href="javascript:void(0)" onclick="mostraEmenta('ihc')">Ementa</a><!--<br><span id="span_ihc"><a href="javascript:void(0)" onclick="destacaRequisito('ihc')">Requisitos</a></span>-->  </td>
+            <td id="dif" class="desenvolvimento_de_aplicativos"><b>Design<br>de Interface</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('dif')">Ementa</a><br><span id="span_dif"><a href="javascript:void(0)" onclick="destacaRequisito('dif')">Requisitos</a></span></td>
+            <td id="dit" class="desenvolvimento_de_aplicativos"><b>Design<br>de Interação</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('dit')">Ementa</a><br><span id="span_dit"><a href="javascript:void(0)" onclick="destacaRequisito('dit')">Requisitos</a></span></td>
+            <td id="wb1" class="desenvolvimento_de_aplicativos"><b>Desenvolvimento<br>de Aplicativos<br>WEBI</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('wb1')">Ementa</a><br><span id="span_wb1"><a href="javascript:void(0)" onclick="destacaRequisito('wb1')">Requisitos</a></span></td>
+            <td id="wb2" class="desenvolvimento_de_aplicativos"><b>Desenvolvimento<br>de Aplicativos<br>WEBII</b><br>4 aulas semanais 66h  <br><a href="javascript:void(0)" onclick="mostraEmenta('wb2')">Ementa</a><br><span id="span_wb2"><a href="javascript:void(0)" onclick="destacaRequisito('wb2')">Requisitos</a></span></td>
+            <td id="tda" class="desenvolvimento_de_aplicativos"><b>Tópicos em<br>Desenvolvimento<br>de Aplicativos</b><br>2 aulas semanais 33h  <br><a href="javascript:void(0)" onclick="mostraEmenta('tda')">Ementa</a><br><span id="span_tda"><a href="javascript:void(0)" onclick="destacaRequisito('tda')">Requisitos</a></span></td>
         </tr>
         <tr>
             <td id="sif" class="analise_de_sistemas">
-                <b>Sistemas<br>de Informação</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('sif')">Ementa</a><!--<br><span id="span_sif"><a href="javascript:void(0)" onclick="destacaRequisito('sif')">Pré-Requisitos</a></span>--></td>
+                <b>Sistemas<br>de Informação</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('sif')">Ementa</a><!--<br><span id="span_sif"><a href="javascript:void(0)" onclick="destacaRequisito('sif')">Requisitos</a></span>--></td>
             <td id="esf" class="analise_de_sistemas">
-                <b>Engenharia<br>de Software</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('esf')">Ementa</a><br><span id="span_esf"><a href="javascript:void(0)" onclick="destacaRequisito('esf')">Pré-Requisitos</a></span> </td>
+                <b>Engenharia<br>de Software</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('esf')">Ementa</a><br><span id="span_esf"><a href="javascript:void(0)" onclick="destacaRequisito('esf')">Requisitos</a></span> </td>
             <td id="aps" class="analise_de_sistemas">
-                <b>Análise e<br>Projeto de Software</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('aps')">Ementa</a><br><span id="span_aps"><a href="javascript:void(0)" onclick="destacaRequisito('aps')">Pré-Requisitos</a></span></td>
+                <b>Análise e<br>Projeto de Software</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('aps')">Ementa</a><br><span id="span_aps"><a href="javascript:void(0)" onclick="destacaRequisito('aps')">Requisitos</a></span></td>
             <td id="gpj" class="analise_de_sistemas">
-                <b>Gerência<br>de Projeto</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('gpj')">Ementa</a><br><span id="span_gpj"><a href="javascript:void(0)" onclick="destacaRequisito('gpj')">Pré-Requisitos</a></span></td>
+                <b>Gerência<br>de Projeto</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('gpj')">Ementa</a><br><span id="span_gpj"><a href="javascript:void(0)" onclick="destacaRequisito('gpj')">Requisitos</a></span></td>
             <td id="qsf" class="analise_de_sistemas">
-                <b>Qualidade<br>de Software</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('qsf')">Ementa</a><br><span id="span_qsf"><a href="javascript:void(0)" onclick="destacaRequisito('qsf')">Pré-Requisitos</a></span> </td>
+                <b>Qualidade<br>de Software</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('qsf')">Ementa</a><br><span id="span_qsf"><a href="javascript:void(0)" onclick="destacaRequisito('qsf')">Requisitos</a></span> </td>
             <td id="tas" class="analise_de_sistemas">
-                <b>Tópicos em Análise<br>de Sistemas</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tas')">Ementa</a><br><span id="span_tas"><a href="javascript:void(0)" onclick="destacaRequisito('tas')">Pré-Requisitos</a></span></td>
+                <b>Tópicos em Análise<br>de Sistemas</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tas')">Ementa</a><br><span id="span_tas"><a href="javascript:void(0)" onclick="destacaRequisito('tas')">Requisitos</a></span></td>
         </tr>
         <tr>
             <td id="tsc" class="area_geral">
                 <b>Tópicos
-                    em<br>Tecnologia e<br>Sociedade</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tsc')">Ementa</a><!--<br><span id="span_tsc"><a href="javascript:void(0)" onclick="destacaRequisito('tsc')">Pré-Requisitos</a></span>--></td>
+                    em<br>Tecnologia e<br>Sociedade</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tsc')">Ementa</a><!--<br><span id="span_tsc"><a href="javascript:void(0)" onclick="destacaRequisito('tsc')">Requisitos</a></span>--></td>
             <td id="pmb" class="banco_de_dados"><b>Projeto
-                    e<br>Modelagem de<br>Banco de Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('pmb')">Ementa</a><br><span id="span_pmb"><a href="javascript:void(0)" onclick="destacaRequisito('pmb')">Pré-Requisitos</a></span></td>
+                    e<br>Modelagem de<br>Banco de Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('pmb')">Ementa</a><br><span id="span_pmb"><a href="javascript:void(0)" onclick="destacaRequisito('pmb')">Requisitos</a></span></td>
             <td id="iob" class="banco_de_dados">
-                <b>Implementação e<br>Operação de Banco de<br>Dados</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('iob')">Ementa</a><br><span id="span_iob"><a href="javascript:void(0)" onclick="destacaRequisito('iob')">Pré-Requisitos</a></span></td>
+                <b>Implementação e<br>Operação de Banco de<br>Dados</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('iob')">Ementa</a><br><span id="span_iob"><a href="javascript:void(0)" onclick="destacaRequisito('iob')">Requisitos</a></span></td>
             <td id="pbd" class="banco_de_dados"><b>Programação
-                    em<br>Banco De Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('pbd')">Ementa</a><br><span id="span_pbd"><a href="javascript:void(0)" onclick="destacaRequisito('pbd')">Pré-Requisitos</a></span></td>
+                    em<br>Banco De Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('pbd')">Ementa</a><br><span id="span_pbd"><a href="javascript:void(0)" onclick="destacaRequisito('pbd')">Requisitos</a></span></td>
             <td id="eep" class="area_geral">
-                <b>Empreendimentos<br>Empresariais</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('eep')">Ementa</a><br><span id="span_eep"><a href="javascript:void(0)" onclick="destacaRequisito('eep')">Pré-Requisitos</a></span></td>
+                <b>Empreendimentos<br>Empresariais</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('eep')">Ementa</a><br><span id="span_eep"><a href="javascript:void(0)" onclick="destacaRequisito('eep')">Requisitos</a></span></td>
             <td id="tbd" class="banco_de_dados"><b>Tópicos
-                    em<br>Banco De Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tbd')">Ementa</a><br><span id="span_tbd"><a href="javascript:void(0)" onclick="destacaRequisito('tbd')">Pré-Requisitos</a></span></td>
+                    em<br>Banco De Dados</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('tbd')">Ementa</a><br><span id="span_tbd"><a href="javascript:void(0)" onclick="destacaRequisito('tbd')">Requisitos</a></span></td>
         </tr>
         <tr>
             <td id="mbs" class="area_geral">
-                <b>Matemática<br>Básica</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('mbs')">Ementa</a><!--<br><span id="span_mbs"><a href="javascript:void(0)" onclick="destacaRequisito('mbs')">Pré-Requisitos</a></span>--></td>
+                <b>Matemática<br>Básica</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('mbs')">Ementa</a><!--<br><span id="span_mbs"><a href="javascript:void(0)" onclick="destacaRequisito('mbs')">Requisitos</a></span>--></td>
             <td id="fmd" class="area_geral">
-                <b>Fundamentos<br>de Matemática<br>Discreta</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('fmd')">Ementa</a><br><span id="span_fmd"><a href="javascript:void(0)" onclick="destacaRequisito('fmd')">Pré-Requisitos</a></span></td>
+                <b>Fundamentos<br>de Matemática<br>Discreta</b><br>4 aulas semanais 66h<br><a href="javascript:void(0)" onclick="mostraEmenta('fmd')">Ementa</a><br><span id="span_fmd"><a href="javascript:void(0)" onclick="destacaRequisito('fmd')">Requisitos</a></span></td>
             <td id="fee" class="area_geral">
-                <b>Fundamentos<br>de Estatística<br>Exploratória</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('fee')">Ementa</a><br><span id="span_fee"><a href="javascript:void(0)" onclick="destacaRequisito('fee')">Pré-Requisitos</a></span></td>
+                <b>Fundamentos<br>de Estatística<br>Exploratória</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('fee')">Ementa</a><br><span id="span_fee"><a href="javascript:void(0)" onclick="destacaRequisito('fee')">Requisitos</a></span></td>
             <td id="fie" class="area_geral">
-                <b>Fundamentos<br>de Inferência<br>Estatística</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('fie')">Ementa</a><br><span id="span_fie"><a href="javascript:void(0)" onclick="destacaRequisito('fie')">Pré-Requisitos</a></span></td>
+                <b>Fundamentos<br>de Inferência<br>Estatística</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('fie')">Ementa</a><br><span id="span_fie"><a href="javascript:void(0)" onclick="destacaRequisito('fie')">Requisitos</a></span></td>
             <td id="mct" class="area_geral">
-                <b>Metodologia<br>Científica</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('mct')">Ementa</a><br><span id="span_mct"><a href="javascript:void(0)" onclick="destacaRequisito('mct')">Pré-Requisitos</a></span></td>
+                <b>Metodologia<br>Científica</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('mct')">Ementa</a><br><span id="span_mct"><a href="javascript:void(0)" onclick="destacaRequisito('mct')">Requisitos</a></span></td>
             <td id="optativa" class="area_geral_optativa">
-                <b>Libras/Inglês</b><br>(optativa)<br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('optativa')">Ementa</a><!--<br><span id="span_optativa"><a href="javascript:void(0)" onclick="destacaRequisito('optativa')">Pré-Requisitos</a></span>--></td>
+                <b>Libras/Inglês</b><br>(optativa)<br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('optativa')">Ementa</a><!--<br><span id="span_optativa"><a href="javascript:void(0)" onclick="destacaRequisito('optativa')">Requisitos</a></span>--></td>
         </tr>
         <tr>
             <td class="em_branco"></td>
             <td class="em_branco"></td>
             <td class="em_branco"></td>
             <td id="acc" class="atividades_complementares">
-                <b>Atividades<br>Complementares<br>Curriculares</b><br>66h<br><a href="javascript:void(0)" onclick="mostraEmenta('acc')">Ementa</a><br><a href="https://docs.google.com/forms/d/e/1FAIpQLScPbUohpBv_9St6Xl0KVHb9YhlCqOXS3SoETL9EefYzDs8dxQ/viewform?usp=sf_link" target="_blank">Formulário</a><br><a href="http://sites.riogrande.ifrs.edu.br/arquivos/1743775/regulamento-de-atividades-complementares.pdf" target="_blank">Regulamento</a><br><span id="span_acc"><a href="javascript:void(0)" onclick="destacaRequisito('acc')">Pré-Requisitos</a></span></td>
+                <b>Atividades<br>Complementares<br>Curriculares</b><br>66h<br><a href="javascript:void(0)" onclick="mostraEmenta('acc')">Ementa</a><br><a href="https://docs.google.com/forms/d/e/1FAIpQLScPbUohpBv_9St6Xl0KVHb9YhlCqOXS3SoETL9EefYzDs8dxQ/viewform?usp=sf_link" target="_blank">Formulário</a><br><a href="http://sites.riogrande.ifrs.edu.br/arquivos/1743775/regulamento-de-atividades-complementares.pdf" target="_blank">Regulamento</a><br><span id="span_acc"><a href="javascript:void(0)" onclick="destacaRequisito('acc')">Requisitos</a></span></td>
             <td class="em_branco"></td>
             <td id="sem" class="producao_cientifica">
-                <b>Seminários</b><br>10 aulas semanais 166h<br><a href="javascript:void(0)" onclick="mostraEmenta('sem')">Ementa</a><br><span id="span_sem"><a href="javascript:void(0)" onclick="destacaRequisito('sem')">Pré-Requisitos</a></span></td>
+                <b>Seminários</b><br>10 aulas semanais 166h<br><a href="javascript:void(0)" onclick="mostraEmenta('sem')">Ementa</a><br><span id="span_sem"><a href="javascript:void(0)" onclick="destacaRequisito('sem')">Requisitos</a></span></td>
         </tr>
         <tr>
             <td class="em_branco"></td>
@@ -371,7 +383,7 @@
             <td class="em_branco"></td>
             <td class="em_branco"></td>
             <td id="tcc" class="producao_cientifica">
-                <b>Trabalho de<br>Conclusão de Curso</b><br>66h<br><a href="javascript:void(0)" onclick="mostraEmenta('tcc')">Ementa</a><br><a href="http://sites.riogrande.ifrs.edu.br/arquivos/1743775/regulamento-do-trabalho-de-conclusao-de-curso-tcc-2022.pdf" target="_blank">Regulamento</a><br><a href="https://www.overleaf.com/read/tstsycfmtssr" target="_blank"> Modelo Tecnológico</a><br><span id="span_tcc"><a href="javascript:void(0)" onclick="destacaRequisito('tcc')">Pré-Requisitos</a></span></td>
+                <b>Trabalho de<br>Conclusão de Curso</b><br>66h<br><a href="javascript:void(0)" onclick="mostraEmenta('tcc')">Ementa</a><br><a href="http://sites.riogrande.ifrs.edu.br/arquivos/1743775/regulamento-do-trabalho-de-conclusao-de-curso-tcc-2022.pdf" target="_blank">Regulamento</a><br><a href="https://www.overleaf.com/read/tstsycfmtssr" target="_blank"> Modelo Tecnológico</a><br><span id="span_tcc"><a href="javascript:void(0)" onclick="destacaRequisito('tcc')">Requisitos</a></span></td>
         </tr>
         <tr>
             <td class="em_branco"></td>
@@ -421,7 +433,7 @@
                     <div style="width: 100%; border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)"> 
                     </div> 
                 </td>
-                <td> Disciplina e seus Pré-Requisitos</td>
+                <td> Disciplina e seus Requisitos</td>
             </tr>
         </table>
     </div>-->
