@@ -97,7 +97,7 @@
             border-radius: 10px;
             background-color: rgb(245, 245, 245);
             border: 3px rgb(184, 184, 184) solid;
-            width: min-content;
+            /* width: min-content; */
             float: left;
             /*align-content: start;*/
         }
@@ -113,8 +113,8 @@
             width: 100%;
             display: flex;
             align-items: flex-start;
-            justify-content: space-around;
-            /* gap:15px; */
+            /* justify-content: space-around; */
+            gap:15px;
         }
     </style>
     <script type="text/javascript">
@@ -225,7 +225,7 @@
         var mct = ["fie"];
         var ementa_mct = "História do pensamento científico e seus métodos. Os aspectos básicos da pesquisa: formulação do problema, objetivos, hipóteses e variáveis. Técnicas de redação e apresentação do trabalho científico. Princípios norteadores do trabalho científico."; 
         
-        var ementa_optativa = "Inglês técnico:\nRevisão gramatical e sintática básica da língua inglesa. Expressões técnicas e estruturas básicas da língua para leitura e compreensão de textos diversos na área do curso. Estratégias de leitura em língua inglesa e usos do dicionário como ferramenta instrumental. Interpretação de textos técnicos a partir do desenvolvimento de habilidades de leitura e do estudo de itens gramaticais sistematizados referentes à linguagem tecnológica específica. Abordagem integrada dos níveis de compreensão de leitura, suas estratégias e aspectos léxico gramaticais; \n\n Libras:\nCriar possibilidades metodológicas de interação e integração da comunidade acadêmica ouvinte, com pessoas surdas usuárias da Língua de Sinais da cidade do Rio Grande. Conceituar Libras, explorando os fundamentos históricos da educação de surdos, os aspectos linguísticos da Língua, além de sinais específicos da área.";         
+        var ementa_optativa = "Inglês:\nRevisão gramatical e sintática básica da língua inglesa. Expressões técnicas e estruturas básicas da língua para leitura e compreensão de textos diversos na área do curso. Estratégias de leitura em língua inglesa e usos do dicionário como ferramenta instrumental. Interpretação de textos técnicos a partir do desenvolvimento de habilidades de leitura e do estudo de itens gramaticais sistematizados referentes à linguagem tecnológica específica. Abordagem integrada dos níveis de compreensão de leitura, suas estratégias e aspectos léxico gramaticais; \n\nLibras:\nCriar possibilidades metodológicas de interação e integração da comunidade acadêmica ouvinte, com pessoas surdas usuárias da Língua de Sinais da cidade do Rio Grande. Conceituar Libras, explorando os fundamentos históricos da educação de surdos, os aspectos linguísticos da Língua, além de sinais específicos da área.";         
        
         function limpar(id) {                           
             
@@ -375,7 +375,7 @@
             <td id="mct" class="area_geral">
                 <b>Metodologia<br>Científica</b><br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('mct')">Ementa</a><br><span id="span_mct"><a href="javascript:void(0)" onclick="destacaRequisito('mct')">Requisitos</a></span></td>
             <td id="optativa" class="area_geral_optativa">
-                <b>Libras/Inglês</b><br>(optativa)<br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('optativa')">Ementa</a><!--<br><span id="span_optativa"><a href="javascript:void(0)" onclick="destacaRequisito('optativa')">Requisitos</a></span>--></td>
+                <b>Optativa</b><br>(Inglês ou Libras)<br>2 aulas semanais 33h<br><a href="javascript:void(0)" onclick="mostraEmenta('optativa')">Ementa</a><!--<br><span id="span_optativa"><a href="javascript:void(0)" onclick="destacaRequisito('optativa')">Requisitos</a></span>--></td>
         </tr>
         <tr>
             <td class="em_branco"></td>
@@ -424,17 +424,21 @@
                     aula</td>
                 <td class="desenvolvimento_de_aplicativos"><b>Desenvolvimento<br>de Aplicativos</b> <br> 330h <br> de
                     sala de aula</td>
-                <td class="producao_cientifica"><b>Produção<br>Científica e<br>Tecnológica</b><br> 166h de sala de
-                    aula<br>+ 66h TCC <br> 232h total</td>
+
+                    <td class="atividades_complementares"><b>Atividades<br>Complementares</b> <br> 66h </td>
+
+              
             </tr>
             <tr>
                 <td class="analise_de_sistemas"><b>Análise<br>de Sistemas</b> <br> 330h <br> de sala de aula </td>
                 <td class="banco_de_dados"><b>Banco de<br>Dados</b> <br> 165h <br> de sala de aula </td>
                 <td class="area_geral"><b>Área<br>Geral</b> <br> 297h <br> de sala de aula</td>
-                <td class="atividades_complementares"><b>Atividades<br>Complementares</b> <br> 66h </td>
+                <td class="area_geral_optativa" ><b>Optativa</b><br> 33h <br> de sala de aula</td>
+
             </tr>
             <tr>
-                <td class="area_geral_optativa" colspan="4"><b>Disciplina Optativa</b><br> 33h de sala de aula</td>
+                <td class="producao_cientifica"  colspan="4"><b>Produção Científica e Tecnológica</b><br> 166h de sala de
+                    aula + 66h TCC <br> 232h total</td>
             </tr>
         </table>
         <h4 style="text-align: center;">2.015 horas de sala de aula e 2.147 total</h4>
