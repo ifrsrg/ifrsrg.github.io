@@ -5,5 +5,8 @@
 
 * **equivalencias.html:** Equivalências de Disciplinas PCC's de 2013 e 2022
    * [Veja aqui](https://ifrsrg.github.io/coordenacao/equivalencias.html)
+ 
+* **exame.html:** script para o cálculo da nota para o exame
+   * [Veja aqui](https://ifrsrg.github.io/coordenacao/exame.html)
 
 * [Redistribuição da Carga Horária](https://github.com/IgorAvilaPereira/DistribuicaoDeDisciplinas)
