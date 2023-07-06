@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Exame</title>
+    <script type="text/javascript">
+
+        // var arredonda = function (numero, casasDecimais) {
+        //     casasDecimais = typeof casasDecimais !== 'undefined' ? casasDecimais : 2;
+        //     return +(Math.floor(numero + ('e+' + casasDecimais)) + ('e-' + casasDecimais));
+        // };
+
+        function enforceMinMax(el) {
+            if (el.value != "") {
+                if (parseInt(el.value) < parseInt(el.min)) {
+                    el.value = el.min;
+                }
+                if (parseInt(el.value) > parseInt(el.max)) {
+                    el.value = el.max;
+                }
+            }
+        }
+        function calcula_exame() {
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+
+            if (!(nota1 >= 0.0 && nota1 <= 10.0)) {
+                return alert("nota 1 incorreta.");
+                return false;
+            }
+            if (!(nota2 >= 0.0 && nota2 <= 10.0)) {
+                return alert("nota 2 incorreta.");
+                return false;
+            }
+            if ((nota1 + nota2) / 2.0 < 7.0) {
+                if ((nota1 + nota2) / 2.0 >= 1.7) {
+                    var ef = (5.0 - (((nota1 + nota2) / 2.0) * 0.6)) / 0.4;
+                    alert(ef.toFixed(1));
+                } else {
+                    alert("Não obteve a média mínima para poder fazer o exame");
+                }
+            } else {
+                alert("Aprovado sem Exame");
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    Nota1: <input id="nota1" type="number" min="0" max="10" value="0" onkeyup=enforceMinMax(this)> <br>
+    Nota2: <input id="nota2" type="number" min="0" max="10" value="0" onkeyup=enforceMinMax(this)>
+    <button onclick="calcula_exame()">Calcular</button> <br> <br>
+</body>
+
+</html>
