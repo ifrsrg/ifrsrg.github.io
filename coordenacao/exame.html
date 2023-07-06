@@ -14,10 +14,10 @@
 
         function enforceMinMax(el) {
             if (el.value != "") {
-                if (parseInt(el.value) < parseInt(el.min)) {
+                if (parseFloat(el.value) < parseFloat(el.min)) {
                     el.value = el.min;
                 }
-                if (parseInt(el.value) > parseInt(el.max)) {
+                if (parseFloat(el.value) > parseFloat(el.max)) {
                     el.value = el.max;
                 }
             }
