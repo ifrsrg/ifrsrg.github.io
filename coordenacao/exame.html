@@ -29,7 +29,7 @@
             if ((nota1 + nota2) / 2.0 < 7.0) {
                 if ((nota1 + nota2) / 2.0 >= 1.7) {
                     var ef = (5.0 - (((nota1 + nota2) / 2.0) * 0.6)) / 0.4;
-                    
+                    // arrendondamento -> devo usar toFixed?
                     alert(Math.ceil(ef * 10) / 10.0);
                 } else {
                     alert("Não obteve a média mínima para poder fazer o exame");
