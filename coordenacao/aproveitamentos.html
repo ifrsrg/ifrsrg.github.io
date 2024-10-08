@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Matriz Curricular - Tecnologia em Análise e Desenvolvimento de Sistemas</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <style>
+        * {
+            cursor: pointer;
+            /*font-family: Arial, Helvetica, sans-serif;*/
+            font-family: 'Open Sans';
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .semestre {
+            /* height: 50px;
+            width: 50px;
+            border-radius: 50%;*/
+            border-radius: 10px;
+            background-color: rgb(245, 245, 245);
+            border: 3px rgb(117, 117, 117) solid;
+            text-align: center;
+        }
+
+        .ciencia_computacao {
+            border-radius: 10px;
+            background-color: rgb(255, 242, 204);
+            border: 3px rgb(235, 220, 175) solid;
+            text-align: center;
+        }
+
+        .desenvolvimento_de_sistemas {
+            border-radius: 10px;
+            background-color: rgb(218, 232, 252);
+            border: 3px rgb(116, 135, 182) solid;
+            text-align: center;
+        }
+
+        .desenvolvimento_de_aplicativos {
+            border-radius: 10px;
+            background-color: rgb(230, 208, 222);
+            border: 3px rgb(178, 132, 161) solid;
+            text-align: center;
+        }
+
+        .analise_de_sistemas {
+            border-radius: 10px;
+            background-color: rgb(213, 232, 212);
+            border: 3px rgb(130, 179, 102) solid;
+            text-align: center;
+        }
+
+        .area_geral {
+            border-radius: 10px;
+            background-color: rgb(229, 204, 255);
+            border: 3px rgb(181, 109, 255) solid;
+            text-align: center;
+        }
+
+        /* .area_geral_optativa {
+            border-radius: 10px;
+            background-color: rgb(229, 204, 255);
+            border: 3px rgb(181, 109, 255) dashed;
+            text-align: center;
+        } */
+
+
+        .area_geral_optativa {
+            border-radius: 10px;    
+            background-color: #b3dbdbfa;
+            /* border: 3px rgb(181, 109, 255) dashed; */
+            border: 3px rgb(36, 162, 162) solid;
+            text-align: center;
+        }
+
+        .banco_de_dados {
+            border-radius: 10px;
+            background-color: rgb(248, 206, 204);
+            border: 3px rgb(206, 126, 123) solid;
+            text-align: center;
+        }
+
+        .producao_cientifica {
+            border-radius: 10px;
+            background-color: rgb(205, 235, 139);
+            border: 3px rgb(107, 119, 88) solid;
+            text-align: center;
+        }
+
+        .atividades_complementares {
+            border-radius: 10px;
+            background-color: white;
+            border: 3px black solid;
+            text-align: center;
+        }
+
+        .area_formacao {
+            border-radius: 10px;
+            background-color: rgb(245, 245, 245);
+            border: 3px rgb(184, 184, 184) solid;
+            width: min-content;
+            float: left;
+        }
+
+        .em_branco {
+            border-radius: 10px;
+            background-color: white;
+            border: 3px white solid;
+            text-align: center;
+        }
+
+
+        div {
+            float: left;
+            height: 470px;
+            width: 23%;
+            padding: 0 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        // disciplinas ppc 2013 => o que aproveita do ppc2022
+        // var fc2013 = ["fcp"];
+        // var lgp2013 = ["lgp", "pmd"];
+        // var fmd2013 = ["mbs", "fmd"];
+        // var fe2013 = ["fee", "fie"];
+        // var lei2013 = ["optativa"]
+        // var ocp2013 = ["ocp"];
+        // var poo2013 = ["poo"];
+        // var iweb2013 = ["ihc", "dif", "dit"];
+        // var bd2013 = ["pmb", "iob", "pbd"];
+        // var so2013 = ["sop"];
+        // var aps2013 = ["ppp", "ppa"];
+        // var esf2013 = ["esf", "aps"];
+        // var wb1_2013 = ["wb1"];
+        // var mct2013 = ["mct"];
+        // var edd2013 = ["edd"];
+        // var gpj2013 = ["gpj", "qsf"];
+        // var wb2_2013 = ["wb2"];
+        // var rcp2013 = ["rcp"];
+        // var eep2013 = ["eep"];
+        // var wb3_2013 = ["tds"];
+        // var sem1_sem2_2013 = ["sem"];
+        // var sif2013 = ["sif"];
+        // var fds1_2013 = ["tda"];
+        // var fds2_2013 = ["tda"];
+        // var reconhecimento_padroes2013 = ["tci"]
+        // var desenvolvimento_de_aplicativos_moveis2013 = ["tda"];
+        // var desenvolvimento_de_aplicativos_embarcados2013 = ["tda"];
+        // var topicos_avancados2013 = ["tci"];
+        // var libras2013 = ["optativa"];
+        // var tecn_sist_geograficos2013 = ["tci"];
+        // var tcc2013 = ["tcc"]
+        // var horas_complementares2013 = ["acc"];
+        
+        // disciplinas ppc 2022
+        // var ocp = ["fcp"];
+        // var pmd = ["lgp"];
+        // var dif = ["ihc"];
+        // var esf = ["sif"];
+        // var pmb = ["sif"];
+        // var fmd = ["mbs"];
+        // var sop = ["ocp", "pmd"];
+        // var poo = ["pmd"];
+        // var dit = ["dif", "pmd"];
+        // var aps = ["esf"];
+        // var iob = ["lgp", "fmd", "pmb"];
+        // var fee = ["mbs"];
+        // var ppp = ["poo", "aps"];
+        // var wb1 = ["poo", "dit", "iob"];
+        // var wb2 = ["wb1", "ppp"];
+        // var edd = ["sop"];
+        // var aps = ["esf"];
+        // var fie = ["fee"];
+        // var pbd = ["iob"];
+        // var gpj = ["aps"];
+        // var ppa = ["ppp"];
+        // var rcp = ["edd"];
+        // var edd = ["sop"];
+        // var qsf = ["gpj"];
+        // var eep = ["gpj"];
+        // var tci = ["rcp"];
+        // var tds = ["ppa"];
+        // var tda = ["wb2"];
+        // var tbd = ["pbd"];
+        // var tas = ["qsf"];
+        // var sem = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "tcc"];
+        // var acc = ["poo", "dit", "sop", "aps", "iob", "fee"];
+        // var tcc = ["rcp", "ppa", "wb2", "qsf", "eep", "mct", "sem"];
+        // var mct = ["fie"];
+
+        function destacar(id) {            
+            var equivalencia = document.getElementById(id);                            
+            if (equivalencia.style.backgroundColor.trim() != "rgb(204, 204, 204)"){                       
+                equivalencia.style = "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";               
+            } else {
+                remover(id);
+            }
+        }
+
+        function remover(id) {
+            var equivalencia = document.getElementById(id);
+            equivalencia.style = "";            
+        }
+
+        // function limparEquivalencias() {
+        //     var array = document.querySelectorAll("td");
+        //     for (let index = 0; index < array.length; index++) {
+        //         array[index].style = "";
+        //     }
+        // }
+        /*
+        function destacaRequisito(id){  
+            limpar();
+            document.getElementById(id).style = "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";                        
+            var vetRequisito = eval(id);
+            for (let index = 0; index < vetRequisito.length; index++) {
+                document.getElementById(vetRequisito[index]).style = "border: 3px rgb(148,148,148) solid; background-color: rgb(204,204,204)";                
+            }
+        }*/
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align:center">PPC 2022 - Tecnologia em Análise e Desenvolvimento de Sistemas </h1>
+    <!-- <div style="align-content: start; width: max-content;">
+        <h2>2013</h2>
+        <input type="checkbox" id="fc2013" onclick="destacaEquivalencia(this.id, this.checked)"> Fundamentos da
+        Computação <br>
+        <input type="checkbox" id="lgp2013" onclick="destacaEquivalencia(this.id, this.checked)"> Lógica de Programação
+        <br>
+        <input type="checkbox" id="fmd2013" onclick="destacaEquivalencia(this.id, this.checked)"> Fund. Matemática
+        Discreta <br>
+        <input type="checkbox" id="fe2013" onclick="destacaEquivalencia(this.id, this.checked)"> Fund. Estatística <br>
+        <input type="checkbox" id="lei2013" onclick="destacaEquivalencia(this.id, this.checked)"> Língua Estrangeira
+        (Inglês) <br>
+        <input type="checkbox" id="ocp2013" onclick="destacaEquivalencia(this.id, this.checked)"> Organização de
+        Computadores <br>
+        <input type="checkbox" id="poo2013" onclick="destacaEquivalencia(this.id, this.checked)"> Programação Orientada
+        a Objetos <br>
+        <input type="checkbox" id="iweb2013" onclick="destacaEquivalencia(this.id, this.checked)"> Interface Web <br>
+        <input type="checkbox" id="bd2013" onclick="destacaEquivalencia(this.id, this.checked)"> Banco de Dados <br>
+        <input type="checkbox" id="so2013" onclick="destacaEquivalencia(this.id, this.checked)"> Sistema Operacionais
+        <br>
+        <input type="checkbox" id="aps2013" onclick="destacaEquivalencia(this.id, this.checked)"> Arquitetura e Projeto
+        de Sistemas <br>
+        <input type="checkbox" id="esf2013" onclick="destacaEquivalencia(this.id, this.checked)"> Engenharia de Software
+        <br>
+        <input type="checkbox" id="wb1_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desenvolvimento para
+        Web I <br>
+        <input type="checkbox" id="mct2013" onclick="destacaEquivalencia(this.id, this.checked)"> Metodologia Científica
+        <br>
+        <input type="checkbox" id="edd2013" onclick="destacaEquivalencia(this.id, this.checked)"> Estruturas de Dados I
+        <br>
+        <input type="checkbox" id="gpj2013" onclick="destacaEquivalencia(this.id, this.checked)"> Gerenciamento de
+        Projetos <br>
+        <input type="checkbox" id="wb2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desenvolvimento para
+        Web II <br>
+        <input type="checkbox" id="rcp2013" onclick="destacaEquivalencia(this.id, this.checked)"> Redes <br>
+        <input type="checkbox" id="eep2013" onclick="destacaEquivalencia(this.id, this.checked)"> Empreendimentos
+        Empresariais <br>
+        <input type="checkbox" id="wb3_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Desesenvolvimento
+        para Web III <br>
+        <input type="checkbox" id="sem1_sem2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Seminário I e
+        Seminário II <br>
+        <input type="checkbox" id="sif2013" onclick="destacaEquivalencia(this.id, this.checked)"> Sistemas de Informação
+        <br>
+        <input type="checkbox" id="fds1_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Ferramentas
+        Desenv. Software I  <br>
+        <input type="checkbox" id="fds2_2013" onclick="destacaEquivalencia(this.id, this.checked)"> Ferramentas Desenv. Software II <br>
+        <input type="checkbox" id="reconhecimento_padroes2013" onclick="destacaEquivalencia(this.id, this.checked)">
+        Reconhecimento de
+        Padrões <br>
+        <input type="checkbox" id="desenvolvimento_de_aplicativos_moveis2013"
+            onclick="destacaEquivalencia(this.id, this.checked)"> Desenv. Aplic. Disp. Móveis<br>
+
+        <input type="checkbox" id="desenvolvimento_de_aplicativos_embarcados2013"
+            onclick="destacaEquivalencia(this.id, this.checked)"> Desenv. Aplic. Disp.
+        Embarcados <br>
+
+        <input type="checkbox" id="topicos_avancados2013" onclick="destacaEquivalencia(this.id, this.checked)"> Tópicos
+        Avançados <br>
+        <input type="checkbox" id="libras2013" onclick="destacaEquivalencia(this.id, this.checked)"> Libras <br>
+        <input type="checkbox" id="tecn_sist_geograficos2013" onclick="destacaEquivalencia(this.id, this.checked)">
+        Tecn. Sistema Inf.
+        Geográficas <br>
+        <input type="checkbox" id="tcc2013" onclick="destacaEquivalencia(this.id, this.checked)"> Trabalho de Conclusão
+        de Curso <br>
+        <input type="checkbox" id="horas_complementares2013" onclick="destacaEquivalencia(this.id, this.checked)"> Horas
+        Complementares <br>        
+    </div> -->
+    <div>
+        <h2>2022</h2>
+        <table>
+            <tr>
+                <td class="semestre"><b>1º Sem.</b></td>
+                <td class="semestre"><b>2º Sem.</b></td>
+                <td class="semestre"><b>3º Sem.</b></td>
+                <td class="semestre"><b>4º Sem.</b></td>
+                <td class="semestre"><b>5º Sem.</b></td>
+                <td class="semestre"><b>6º Sem.</b></td>
+            </tr>
+            <tr>
+                <td id="fcp" class="ciencia_computacao" onclick="destacar(this.id)"><b>Fundamentos<br>da Computação</b><br>4 aulas semanais 66h</td>
+                <td id="ocp" class="ciencia_computacao" onclick="destacar(this.id)"><b>Organização<br>de Computadores</b><br>2 aulas semanais 33h
+                </td>
+                <td id="sop" class="ciencia_computacao" onclick="destacar(this.id)"><b>Sistemas<br>Operacionais</b><br>2 aulas semanais 33h</td>
+                <td id="edd" class="ciencia_computacao" onclick="destacar(this.id)"><b>Estrutura<br>de Dados</b><br>4 aulas semanais 66h</td>
+                <td id="rcp" class="ciencia_computacao" onclick="destacar(this.id)"><b>Redes<br>de Computadores</b><br>4 aulas semanais 66h</td>
+                <td id="tci" class="ciencia_computacao" onclick="destacar(this.id)"><b>Tópicos em Ciência<br>da Computação</b><br>2 aulas semanais
+                    33h</td>
+            </tr>
+            <tr>
+                <td id="lgp" class="desenvolvimento_de_sistemas" onclick="destacar(this.id)"><b>Lógica<br>de Programação</b><br>6 aulas semanais
+                    100h</td>
+                <td id="pmd" class="desenvolvimento_de_sistemas" onclick="destacar(this.id)"><b>Programação<br>Modular</b><br>4 aulas semanais 66h
+                </td>
+                <td id="poo" class="desenvolvimento_de_sistemas" onclick="destacar(this.id)"><b>Programação<br>Orientada a Objetos</b><br>4 aulas
+                    semanais 66h</td>
+                <td id="ppp" class="desenvolvimento_de_sistemas" onclick="destacar(this.id)"><b>Princípios e Padrões<br>de Projeto</b><br>4 aulas
+                    semanais 66h</td>
+                <td id="ppa" class="desenvolvimento_de_sistemas" onclick="destacar(this.id)"><b>Princípios e Padrões<br>de Arquitetura</b><br>4
+                    aulas semanais 66h</td>
+                <td id="tds" class="desenvolvimento_de_sistemas" onclick="destacar(this.id)"><b>Tópicos em<br>Desenvolvimento<br>de
+                        Sistemas</b><br>2 aulas semanais 33h</td>
+            </tr>
+            <tr>
+                <td id="ihc" class="desenvolvimento_de_aplicativos" onclick="destacar(this.id)"><b>Fundamentos de<br>Interação
+                        Humano-<br>Computador</b><br>2 aulas semanais 33h</td>
+                <td id="dif" class="desenvolvimento_de_aplicativos" onclick="destacar(this.id)"><b>Design<br>de Interface</b><br>4 aulas semanais
+                    66h</td>
+                <td id="dit" class="desenvolvimento_de_aplicativos" onclick="destacar(this.id)"><b>Design<br>de Interação</b><br>4 aulas semanais
+                    66h</td>
+                <td id="wb1" class="desenvolvimento_de_aplicativos" onclick="destacar(this.id)"><b>Desenvolvimento<br>de
+                        Aplicativos<br>WEBI</b><br>4 aulas semanais 66h</td>
+                <td id="wb2" class="desenvolvimento_de_aplicativos" onclick="destacar(this.id)"><b>Desenvolvimento<br>de
+                        Aplicativos<br>WEBII</b><br>4 aulas semanais 66h</td>
+                <td id="tda" class="desenvolvimento_de_aplicativos" onclick="destacar(this.id)"><b>Tópicos em<br>Desenvolvimento<br>de
+                        Aplicativos</b><br>2 aulas semanais 33h</td>
+            </tr>
+            <tr>
+                <td id="sif" class="analise_de_sistemas" onclick="destacar(this.id)"><b>Sistemas<br>de Informação</b><br>4 aulas semanais 66h</td>
+                <td id="esf" class="analise_de_sistemas" onclick="destacar(this.id)"><b>Engenharia<br>de Software</b><br>4 aulas semanais 66h </td>
+                <td id="aps" class="analise_de_sistemas" onclick="destacar(this.id)"><b>Análise e<br>Projeto de Software</b><br>4 aulas semanais 66h
+                </td>
+                <td id="gpj" class="analise_de_sistemas" onclick="destacar(this.id)"><b>Gerência<br>de Projeto</b><br>4 aulas semanais 66h</td>
+                <td id="qsf" class="analise_de_sistemas" onclick="destacar(this.id)"><b>Qualidade<br>de Software</b><br>2 aulas semanais 33h </td>
+                <td id="tas" class="analise_de_sistemas" onclick="destacar(this.id)"><b>Tópicos em Análise<br>de Sistemas</b><br>2 aulas semanais
+                    33h</td>
+            </tr>
+            <tr>
+                <td id="tsc" class="area_geral" onclick="destacar(this.id)"><b>Tópicos em<br>Tecnologia e<br>Sociedade</b><br>2 aulas semanais 33h
+                </td>
+                <td id="pmb" class="banco_de_dados" onclick="destacar(this.id)"><b>Projeto e<br>Modelagem de<br>Banco de Dados</b><br>2 aulas
+                    semanais 33h</td>
+                <td id="iob" class="banco_de_dados" onclick="destacar(this.id)"><b>Implementação e<br>Operação de Banco de<br>Dados</b><br>4 aulas
+                    semanais 66h</td>
+                <td id="pbd" class="banco_de_dados" onclick="destacar(this.id)"><b>Programação em<br>Banco De Dados</b><br>2 aulas semanais 33h</td>
+                <td id="eep" class="area_geral" onclick="destacar(this.id)"<b>Empreendimentos<br>Empresariais</b><br>4 aulas semanais 66h</td>
+                <td id="tbd" class="banco_de_dados" onclick="destacar(this.id)"><b>Tópicos em<br>Banco De Dados</b><br>2 aulas semanais 33h</td>
+            </tr>
+            <tr>
+                <td id="mbs" class="area_geral" onclick="destacar(this.id)"><b>Matemática<br>Básica</b><br>2 aulas semanais 33h</td>
+                <td id="fmd" class="area_geral" onclick="destacar(this.id)"><b>Fundamentos<br>de Matemática<br>Discreta</b><br>4 aulas semanais 66h
+                </td>
+                <td id="fee" class="area_geral" onclick="destacar(this.id)"><b>Fundamentos<br>de Estatística<br>Exploratória</b><br>2 aulas semanais
+                    33h</td>
+                <td id="fie" class="area_geral" onclick="destacar(this.id)"><b>Fundamentos<br>de Inferência<br>Estatística</b><br>2 aulas semanais
+                    33h</td>
+                <td id="mct" class="area_geral" onclick="destacar(this.id)"><b>Metodologia<br>Científica</b><br>2 aulas semanais 33h</td>
+                <td id="optativa" class="area_geral_optativa" onclick="destacar(this.id)">
+                    <!-- <b>Libras/Inglês</b><br>(optativa)<br>2 aulas semanais 33h -->
+                    <b>Componentes<br>Curriculares<br>Optativos</b><br>(Inglês/Libras)<br>2 aulas semanais 33h
+                </td>
+            </tr>
+            <tr>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td id="acc" class="atividades_complementares" onclick="destacar(this.id)">
+                    <b>Atividades<br>Complementares<br>Curriculares</b><br>66h</td>
+                <td class="em_branco"></td>
+                <td id="sem" class="producao_cientifica" onclick="destacar(this.id)"><b>Seminários</b><br>10 aulas semanais 166h</td>
+            </tr>
+            <tr>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td id="tcc" class="producao_cientifica" onclick="destacar(this.id)"><b>Trabalho de<br>Conclusão de Curso</b><br>66h</td>
+            </tr>
+            <tr>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td class="em_branco"></td>
+                <td class="atividades_complementares" onclick="destacar(this.id)"><b>ENADE</b></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
