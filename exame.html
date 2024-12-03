@@ -18,7 +18,7 @@
                 document.querySelector('#nota').textContent = e.target.value;
                 document.querySelector('#exame').textContent = Math.ceil(((5.0 - ((e.target.value / 4.0) * 0.6)) / 0.4) * 10) / 10.0;
             };
-        document.querySelector('input[type=range]').addEventListener('mousemove', calcula);
+        document.querySelector('input[type=range]').addEventListener('input', calcula);
 
     </script>
 </body>
