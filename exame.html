@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif; font-size: 2em;;">
+    <h1>Exame</h1>
+    <div style="display: flex; flex-direction: column; ">
+        <input type="range" min="6.7" max="27.9" style="width: 100%; display: block;" step="0.1">
+        <div id="nota" style="text-align: center;">Mova o slider</div>
+        <div style="text-align: center;">Nota necessária no exame</div>
+        <div id="exame" style="text-align: center;"></div>
+    </div>
+    <script>
+        document.querySelector('input[type=range]').addEventListener('mousemove', (e) => {
+            document.querySelector('#nota').textContent = e.target.value;
+            document.querySelector('#exame').textContent = Math.ceil(((5.0 - ((e.target.value / 4.0) * 0.6)) / 0.4) * 10) / 10.0;
+        });
+    </script>
+</body>
+</html> 
