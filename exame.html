@@ -14,10 +14,12 @@
         <div id="exame" style="text-align: center;"></div>
     </div>
     <script>
-        document.querySelector('input[type=range]').addEventListener('mousemove', (e) => {
-            document.querySelector('#nota').textContent = e.target.value;
-            document.querySelector('#exame').textContent = Math.ceil(((5.0 - ((e.target.value / 4.0) * 0.6)) / 0.4) * 10) / 10.0;
-        });
+        const calcula = (e) => {
+                document.querySelector('#nota').textContent = e.target.value;
+                document.querySelector('#exame').textContent = Math.ceil(((5.0 - ((e.target.value / 4.0) * 0.6)) / 0.4) * 10) / 10.0;
+            };
+        document.querySelector('input[type=range]').addEventListener('mousemove', calcula);
+
     </script>
 </body>
 </html> 
