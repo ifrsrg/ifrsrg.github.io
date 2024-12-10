@@ -1,25 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>Cálculo do Exame</title>
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif; font-size: 2em;;">
-    <h1>Exame</h1>
-    <div style="display: flex; flex-direction: column; ">
-        <input type="range" min="6.7" max="27.9" style="width: 100%; display: block; margin-bottom: 2em;" step="0.1">
-        <div id="nota" style="text-align: center;margin-bottom: 3em;">Mova o slider para selecionar o somatório dos bimestres</div>
-        <div style="text-align: center;">Nota necessária no exame</div>
-        <div id="exame" style="text-align: center;"></div>
-    </div>
-    <script>
-        const calcula = (e) => {
-                document.querySelector('#nota').textContent = e.target.value;
-                document.querySelector('#exame').textContent = Math.ceil(((5.0 - ((e.target.value / 4.0) * 0.6)) / 0.4) * 10) / 10.0;
-            };
-        document.querySelector('input[type=range]').addEventListener('input', calcula);
 
+<body>
+    <div class="container my-2">
+        <h1 class="m-2">Previsão de nota do Exame</h1>
+        <select class="form-select mb-2" aria-label="Quantos períodos">
+            <option value="0">Selecione a quantidade de períodos</option>            
+            <option value="4">4 Bimestres</option>
+            <option value="3">3 Trimestres</option>
+            <option value="2">2 Bimestres</option>
+        </select>
+        <form class="row g-3 pt-2">
+        </form>
+        <div class="mt-2">
+            <label for="exame" class="form-label">Previsão de nota para o exame:</label>
+            <input type="text" readonly class="form-control" id="exame">
+        </div>
+    </div>
+
+    <script>
+        const nota = `<div class="col-md-2">
+                <label for="nota$" class="form-label">Nota $:</label>
+                <input type="number" class="form-control nota" id="nota$" onchange='calcula()' value="7" step="0.1" min="0.0" max="10.0" required>
+            </div>`;
+
+        const form = document.querySelector('form');
+        const exame = document.querySelector('#exame');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('select').addEventListener('change', (e) => {
+                let html = '';
+                const notas = Number(e.target.value);
+                for (var i = 1; i <= notas; i++) {
+                    html += nota.replaceAll('$', i);
+                }
+                form.innerHTML = html + `<div class="col-md-2">
+                <label for="media" class="form-label">Média:</label>
+                <input type="number" class="form-control media" id="media" readonly>
+                </div>`;
+                calcula();
+                form.nota1.focus();
+            });
+        });
+
+        const calcula = (e) => {
+            exame.value = "";
+            const notas = Array.from(document.querySelectorAll('input.nota')).map(e => Number(e.value));
+            const media = notas.reduce((a, b) => a + b, 0) / notas.length;
+            const mediaComponent = document.querySelector('#media');
+            mediaComponent.value = media;
+            let result;
+            if (media >= 7) {
+                result = "Aprovado por média";
+            } else {
+                const nota = Math.ceil(((5.0 - ((media) * 0.6)) / 0.4) * 10) / 10.0;
+                result = nota > 10 ? "Reprovado por média" : nota;
+            }
+            exame.value = result;
+        };
     </script>
 </body>
-</html> 
+</html>
