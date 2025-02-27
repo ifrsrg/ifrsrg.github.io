@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor TinyMCE</title>
+    <script src="https://cdn.tiny.cloud/1/l61viygjvt06d37cwuslbw6zlvrxgxbvrcti9p9t51zuw3lt/tinymce/4/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .editor-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        textarea {
+            flex: 1;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-container">
+        <textarea id="editor"></textarea>
+    </div>
+    <script>
+        // plugins: 'advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste help wordcount',
+        tinymce.init({
+            selector: '#editor',
+            extended_valid_elements: 'a[accesskey|charset|class|coords|dir<ltr?rtl|href|hreflang|id|lang|name|onblur|onclick|ondblclick|onfocus|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout|onmouseover|onmouseup|rel|rev|shape<circle?default?poly?rect|style|tabindex|title|target|type],table[style|class|border=1|width|bgcolor]',            
+            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+            height: '680',
+            menubar: true,
+            resize: false,
+            font_formats: 'Arial=arial,sans-serif;Calibri=calibri,arial,sans-serif;Tahoma=tahoma,arial,sans-serif;Trebuchet MS=trebuchet ms,arial,sans-serif;Verdana=verdana,arial,sans-serif;',
+            fontsize_formats: '6pt 7pt 8pt 9pt 10pt 10.5pt 11pt 12pt 13pt 14pt 15pt 16pt 18pt 20pt 22pt 24pt 26pt 28pt 32pt 36pt 40pt 44pt 48pt 54pt 60pt 66pt 72pt',
+            menu: {
+            file: {title: 'File', items: 'newdocument'},
+            edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall | searchreplace'},
+            insert: {title: 'Insert', items: 'link file image | charmap hr pagebreak insertdatetime'},
+            view: {title: 'View', items: 'visualaid | preview'},
+            format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats | removeformat'},
+            table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
+            },
+            plugins: [
+            "advlist autolink autosave link image imagetools lists charmap print preview hr anchor pagebreak spellchecker",
+            "searchreplace wordcount visualblocks visualchars code insertdatetime nonbreaking",
+            "table contextmenu directionality emoticons template textcolor paste textcolor colorpicker textpattern"
+            ],
+            
+            toolbar1: "newdocument | bold italic underline strikethrough |  hr removeformat | subscript superscript | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent blockquote",
+            toolbar2: "undo redo | cut copy paste | searchreplace | preview | charmap | link unlink image media insertdatetime | table | pagebreak restoredraft",
+            toolbar3: "styleselect formatselect fontselect fontsizeselect | palavrasreservadasselect | referenciasselect ",
+            
+            toolbar_items_size: 'small',
+        });
+    </script>
+</body>
+</html>
