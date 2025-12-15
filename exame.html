@@ -60,7 +60,7 @@
             const mediaComponent = document.querySelector('#media');
             mediaComponent.value = media;
             let result;
-            if (media >= 7) {
+            if (media >= 6.95) { // SIA e SIGAA arredondam para cima (7.0)
                 result = "Aprovado por média";
             } else {
                 const nota = Math.ceil(((5.0 - ((media) * 0.6)) / 0.4) * 10) / 10.0;
