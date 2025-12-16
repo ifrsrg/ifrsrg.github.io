@@ -8,12 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <title>Cálculo do Exame</title>
+    <title>Simulador de Exame</title>
 </head>
 
 <body>
     <div class="container my-2">
-        <h1 class="m-2">Previsão de nota do Exame</h1>
+        <h1 class="m-2">Simulador de Exame</h1>
         <select class="form-select mb-2" aria-label="Quantos períodos">
             <option value="0">Selecione a quantidade de períodos</option>            
             <option value="4">4 Bimestres</option>
@@ -58,7 +58,7 @@
             const notas = Array.from(document.querySelectorAll('input.nota')).map(e => Number(e.value));
             const media = notas.reduce((a, b) => a + b, 0) / notas.length;
             const mediaComponent = document.querySelector('#media');
-            mediaComponent.value = media;
+            mediaComponent.value = media.toFixed(1);
             let result;
             if (media >= 6.95) { // SIA e SIGAA arredondam para cima (7.0)
                 result = "Aprovado por média";
@@ -66,7 +66,7 @@
                 const nota = Math.ceil(((5.0 - ((media) * 0.6)) / 0.4) * 10) / 10.0;
                 result = nota > 10 ? "Reprovado por média" : nota;
             }
-            exame.value = result;
+            exame.value = typeof result == "number" ? result.toFixed(1) : result;
         };
     </script>
 </body>
