@@ -21,7 +21,10 @@
   .stat.pesquisa .num { color: #60a5fa; }
   .stat.extensao .num { color: #fb923c; }
   .stat.indissociavel .num { color: #c084fc; }
-  .controls { display: flex; justify-content: center; gap: 10px; padding: 20px 16px 10px; flex-wrap: wrap; }
+  .edital-wrap { display: flex; justify-content: center; padding: 24px 16px 0; }
+  .btn-edital { display: inline-block; background: #d97706; color: white; font-size: 1rem; font-weight: 800; padding: 14px 36px; border-radius: 30px; text-decoration: none; box-shadow: 0 4px 18px rgba(217,119,6,0.4); letter-spacing: 0.03em; transition: transform .2s, box-shadow .2s; }
+  .btn-edital:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(217,119,6,0.5); }
+  .controls { display: flex; justify-content: center; gap: 10px; padding: 16px 16px 10px; flex-wrap: wrap; }
   .btn { padding: 8px 20px; border: none; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all .2s; }
   .btn-expand { background: #2563eb; color: white; }
   .btn-collapse { background: #e2e8f0; color: #475569; }
@@ -75,6 +78,9 @@
   <div class="stat indissociavel"><div class="num">2</div><div class="lbl">Indissociável</div></div>
 </div>
 <div class="container">
+  <div class="edital-wrap">
+    <a href="https://ifrs.edu.br/riogrande/?post_type=edital&p=28584&preview=true" target="_blank" class="btn-edital">📄 Leia o Edital</a>
+  </div>
   <div class="controls">
     <button class="btn btn-expand" id="btnExpand">▼ Expandir Tudo</button>
     <button class="btn btn-collapse" id="btnCollapse">▲ Recolher Tudo</button>
