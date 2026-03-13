@@ -46,8 +46,10 @@
   .card-coord { font-size: 0.80rem; color: #475569; }
   .card-bolsas { font-size: 0.78rem; color: #64748b; }
   .card-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .inscricao-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .btn-inscricao { padding: 7px 16px; border-radius: 20px; color: white; font-size: 0.8rem; font-weight: 700; white-space: nowrap; transition: opacity .2s, transform .2s; border: none; cursor: pointer; }
   .btn-inscricao:hover { opacity: 0.85; transform: translateY(-1px); }
+  .inscricao-hint { font-size: 0.65rem; color: #f59e0b; font-weight: 600; text-align: center; white-space: nowrap; }
   .arrow { font-size: 0.75rem; color: #94a3b8; transition: transform .2s; }
   .arrow.open { transform: rotate(180deg); }
   .card-body { padding: 0 16px 16px; border-top: 1px solid #f1f5f9; display: none; }
@@ -59,7 +61,7 @@
   .section-content { font-size: 0.88rem; color: #334155; line-height: 1.7; }
   .section-content .line { display: block; padding: 2px 0; }
   .section-content .line:not(:last-child) { border-bottom: 1px solid #f8fafc; }
-  @media (max-width:600px) { .header-text h1 { font-size:1.2rem; } .btn-inscricao { padding:6px 10px;font-size:0.75rem; } .card-title { font-size:0.85rem; } }
+  @media (max-width:600px) { .header-text h1 { font-size:1.2rem; } .btn-inscricao { padding:6px 10px;font-size:0.75rem; } .card-title { font-size:0.85rem; } .inscricao-hint { font-size:0.6rem; } }
 </style>
 </head>
 <body>
@@ -79,7 +81,7 @@
 </div>
 <div class="container">
   <div class="edital-wrap">
-    <a href="https://ifrs.edu.br/riogrande/?post_type=edital&p=28584&preview=true" target="_blank" class="btn-edital">📄 Leia o Edital</a>
+    <a href="https://ifrs.edu.br/riogrande/editais/edital-conjunto-no-06-2026-selecao-de-bolsistas-para-projetos-de-ensino-pesquisa-extensao-e-indissociaveis-2026/" target="_blank" class="btn-edital">📄 Leia o Edital</a>
   </div>
   <div class="controls">
     <button class="btn btn-expand" id="btnExpand">▼ Expandir Tudo</button>
@@ -102,7 +104,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens0">▼</span>
             </div>
           </div>
@@ -130,7 +135,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens1">▼</span>
             </div>
           </div>
@@ -158,7 +166,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens2">▼</span>
             </div>
           </div>
@@ -186,7 +197,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens3">▼</span>
             </div>
           </div>
@@ -213,7 +227,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens4">▼</span>
             </div>
           </div>
@@ -241,7 +258,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens5">▼</span>
             </div>
           </div>
@@ -257,11 +277,8 @@
 <span class="line">- Ter sido aprovado(a) no(s) seguinte(s) componente(s) curricular(es): LP 1 e 2</span>
 <span class="line">- Ser beneficiário(a) do Programa de Assistência Estudantil:: Sim</span>
 <span class="line">- Outros Requisitos:: enviar carta de intenções por email para a professora durante o prazo de inscrições; não serão aceitas cartas após esse período.</span></div></div>
-            <div class='section'><div class='section-title'>⚖️ Critérios de Avaliação</div><div class='section-content'><span class="line">- Entrevista: Presencial (Peso: 5)</span>
-<span class="line">- Análise: Carta de intenções (Peso: 10)</span>
-<span class="line">- Possuir Habilidade(s) e/ou Conhecimento(s) em: informar na carta de intenções</span>
-<span class="line">- Disponibilidade de horário compatível com as demandas do projeto: informar na carta de intenções  (Peso: 5)</span>
-<span class="line">- Outros critérios de avaliação: a carta de intenções é eliminatória. caso deseje, solicite à professora tópicos da carta de intenções (ana.almeida@riogrande.ifrs.edu.br); não serão aceitas cartas enviadas após encerrado o período de inscrições.</span></div></div>
+            <div class='section'><div class='section-title'>⚖️ Critérios de Avaliação</div><div class='section-content'><span class="line">- Carta de intenções enviada para o e-mail da professora (ana.almeida@riogrande.ifrs.edu.br) no prazo de inscrições do edital; informar na carta dados do candidato, interesses, habilidades e disponibilidade de horários (em forma de texto coeso e coerente). Se preferir, solicitar à professora sugestão de conteúdo. Peso: eliminatória</span>
+<span class="line">- ⁠entrevista: presencial apenas para desempate</span></div></div>
           </div>
         </div><div class="card">
           <div class="card-header" onclick="toggle('ens6')">
@@ -274,7 +291,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens6">▼</span>
             </div>
           </div>
@@ -304,7 +324,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens7">▼</span>
             </div>
           </div>
@@ -335,7 +358,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens8">▼</span>
             </div>
           </div>
@@ -364,7 +390,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens9">▼</span>
             </div>
           </div>
@@ -392,7 +421,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens10">▼</span>
             </div>
           </div>
@@ -422,7 +454,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens11">▼</span>
             </div>
           </div>
@@ -452,7 +487,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens12">▼</span>
             </div>
           </div>
@@ -479,7 +517,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens13">▼</span>
             </div>
           </div>
@@ -497,10 +538,9 @@
 <span class="line">- Possuir matrícula no(s) seguinte(s) curso(s):   Técnico em Enfermagem</span>
 <span class="line">- Ser beneficiário(a) do Programa de Assistência Estudantil:: Sim</span>
 <span class="line">- Outros Requisitos:: Habilidades manuais (artesanato, costura, pintura) são um diferencial</span></div></div>
-            <div class='section'><div class='section-title'>⚖️ Critérios de Avaliação</div><div class='section-content'><span class="line">- Análise: Currículo Vitae, Vídeo* (Peso: 6)</span>
+            <div class='section'><div class='section-title'>⚖️ Critérios de Avaliação</div><div class='section-content'><span class="line">- Análise: Currículo Vitae, Carta de Intenções (Peso: 6)</span>
 <span class="line">- Possuir Habilidade(s) e/ou Conhecimento(s) em: Habilidades manuais (Peso: 1)</span>
-<span class="line">- Disponibilidade de horário compatível com as demandas do projeto: Manhãs livres e eventualmente vespertino ou finais de semana  (Peso: 3)</span>
-<span class="line">*gravar vídeo de no máximo 5 minutos explicar por que se encaixaria no projeto e quais características poderiam agregar nas ações.</span></div></div>
+<span class="line">- Disponibilidade de horário compatível com as demandas do projeto: Manhãs livres e eventualmente vespertino ou finais de semana  (Peso: 3)</span></div></div>
           </div>
         </div><div class="card">
           <div class="card-header" onclick="toggle('ens14')">
@@ -513,7 +553,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens14">▼</span>
             </div>
           </div>
@@ -542,7 +585,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens15">▼</span>
             </div>
           </div>
@@ -573,7 +619,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens16">▼</span>
             </div>
           </div>
@@ -603,7 +652,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens17">▼</span>
             </div>
           </div>
@@ -630,7 +682,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens18">▼</span>
             </div>
           </div>
@@ -660,7 +715,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens19">▼</span>
             </div>
           </div>
@@ -687,7 +745,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens20">▼</span>
             </div>
           </div>
@@ -716,7 +777,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#16a34a" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ens21">▼</span>
             </div>
           </div>
@@ -754,7 +818,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes0">▼</span>
             </div>
           </div>
@@ -787,7 +854,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes1">▼</span>
             </div>
           </div>
@@ -813,7 +883,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes2">▼</span>
             </div>
           </div>
@@ -841,7 +914,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes3">▼</span>
             </div>
           </div>
@@ -869,7 +945,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes4">▼</span>
             </div>
           </div>
@@ -898,7 +977,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes5">▼</span>
             </div>
           </div>
@@ -926,7 +1008,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes6">▼</span>
             </div>
           </div>
@@ -954,7 +1039,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes7">▼</span>
             </div>
           </div>
@@ -984,7 +1072,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes8">▼</span>
             </div>
           </div>
@@ -1016,7 +1107,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes9">▼</span>
             </div>
           </div>
@@ -1043,7 +1137,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes10">▼</span>
             </div>
           </div>
@@ -1067,7 +1164,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes11">▼</span>
             </div>
           </div>
@@ -1095,7 +1195,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes12">▼</span>
             </div>
           </div>
@@ -1124,7 +1227,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes13">▼</span>
             </div>
           </div>
@@ -1153,7 +1259,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes14">▼</span>
             </div>
           </div>
@@ -1182,7 +1291,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes15">▼</span>
             </div>
           </div>
@@ -1211,7 +1323,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes16">▼</span>
             </div>
           </div>
@@ -1237,7 +1352,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes17">▼</span>
             </div>
           </div>
@@ -1266,7 +1384,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#2563eb" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-pes18">▼</span>
             </div>
           </div>
@@ -1300,7 +1421,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext0">▼</span>
             </div>
           </div>
@@ -1333,7 +1457,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext1">▼</span>
             </div>
           </div>
@@ -1366,7 +1493,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext2">▼</span>
             </div>
           </div>
@@ -1391,7 +1521,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext3">▼</span>
             </div>
           </div>
@@ -1418,7 +1551,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext4">▼</span>
             </div>
           </div>
@@ -1445,7 +1581,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext5">▼</span>
             </div>
           </div>
@@ -1474,7 +1613,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext6">▼</span>
             </div>
           </div>
@@ -1503,7 +1645,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext7">▼</span>
             </div>
           </div>
@@ -1531,7 +1676,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext8">▼</span>
             </div>
           </div>
@@ -1559,7 +1707,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext9">▼</span>
             </div>
           </div>
@@ -1584,7 +1735,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext10">▼</span>
             </div>
           </div>
@@ -1613,7 +1767,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext11">▼</span>
             </div>
           </div>
@@ -1641,7 +1798,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext12">▼</span>
             </div>
           </div>
@@ -1668,7 +1828,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext13">▼</span>
             </div>
           </div>
@@ -1694,7 +1857,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext14">▼</span>
             </div>
           </div>
@@ -1724,7 +1890,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext15">▼</span>
             </div>
           </div>
@@ -1752,7 +1921,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext16">▼</span>
             </div>
           </div>
@@ -1767,7 +1939,8 @@
 <span class="line">- Estar cursando, no mínimo, o seguinte período: 2º ano.</span>
 <span class="line">- Ter sido aprovado(a) no(s) seguinte(s) componente(s) curricular(es): Matemática I.</span></div></div>
             <div class='section'><div class='section-title'>⚖️ Critérios de Avaliação</div><div class='section-content'><span class="line">- Entrevista: Presencial (Peso: 7)</span>
-<span class="line">- Outros critérios de avaliação: Análise do histórico escolar do IFRS (enviar para o e-mail: priscila.silveira@riogrande.ifrs.edu.br). Peso 1.</span></div></div>
+<span class="line">- Outros critérios de avaliação: Análise do histórico escolar do IFRS (enviar para o e-mail: priscila.silveira@riogrande.ifrs.edu.br). Peso 1.</span>
+<span class="line">- Disponibilidade de horário compatível com as demandas do projeto: 8 horas semanais.</span></div></div>
           </div>
         </div><div class="card">
           <div class="card-header" onclick="toggle('ext17')">
@@ -1780,7 +1953,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext17">▼</span>
             </div>
           </div>
@@ -1810,7 +1986,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext18">▼</span>
             </div>
           </div>
@@ -1836,7 +2015,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext19">▼</span>
             </div>
           </div>
@@ -1861,7 +2043,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext20">▼</span>
             </div>
           </div>
@@ -1883,11 +2068,14 @@
               <div class="card-info">
                 <span class="card-title">Os cursos técnicos em Fabricação Mecânica e Mecânica nas redes sociais</span>
                 <span class="card-coord">👤 <strong>Coordenador:</strong> Gustavo Simões Teixeira</span>
-                <span class="card-bolsas">🕐 <strong>Nº de bolsas / CH:</strong> 1 / 8h</span>
+                <span class="card-bolsas">🕐 <strong>Nº de bolsas / CH:</strong> 1 / 4h</span>
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext21">▼</span>
             </div>
           </div>
@@ -1916,7 +2104,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext22">▼</span>
             </div>
           </div>
@@ -1943,7 +2134,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext23">▼</span>
             </div>
           </div>
@@ -1971,7 +2165,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext24">▼</span>
             </div>
           </div>
@@ -1998,7 +2195,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext25">▼</span>
             </div>
           </div>
@@ -2013,7 +2213,8 @@
 <span class="line">- Outros Requisitos:: Conhecimentos em práticas integrativas e atuação na área serão diferenciais.</span></div></div>
             <div class='section'><div class='section-title'>⚖️ Critérios de Avaliação</div><div class='section-content'><span class="line">- Análise: Currículo Vitae, Produção de vídeo (Peso: 5)</span>
 <span class="line">- Possuir Habilidade(s) e/ou Conhecimento(s) em: Reiki e Yoga (Peso: 2)</span>
-<span class="line">- Disponibilidade de horário compatível com as demandas do projeto: Um turno disponível sendo manhãs ou tarde e eventualmente finais de semana (Peso: 3)</span></div></div>
+<span class="line">- Disponibilidade de horário compatível com as demandas do projeto: Um turno disponível sendo manhãs ou tarde e eventualmente finais de semana (Peso: 3)</span>
+<span class="line">*gravar vídeo de no máximo 5 minutos explicar por que se encaixaria no projeto e quais características poderiam agregar nas ações.</span></div></div>
           </div>
         </div><div class="card">
           <div class="card-header" onclick="toggle('ext26')">
@@ -2026,7 +2227,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext26">▼</span>
             </div>
           </div>
@@ -2052,7 +2256,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#ea580c" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ext27">▼</span>
             </div>
           </div>
@@ -2088,7 +2295,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#7c3aed" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#7c3aed" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ind0">▼</span>
             </div>
           </div>
@@ -2119,7 +2329,10 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="btn-inscricao" style="background:#7c3aed" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+              <div class="inscricao-wrap">
+                <button class="btn-inscricao" style="background:#7c3aed" onclick="event.stopPropagation();window.open(&quot;https://forms.gle/KZnuP9t7L2j9qpRM7&quot;,&quot;_blank&quot;)">Inscrever-se</button>
+                <span class="inscricao-hint">⚠️ Acesse com seu e-mail institucional</span>
+              </div>
               <span class="arrow" id="arrow-ind1">▼</span>
             </div>
           </div>
